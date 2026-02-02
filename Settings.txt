@@ -1,0 +1,1 @@
+alias graph='nvm install 20; export GRAPHMAN_HOME="/Users/co668336/Runtime/Graphman/graphman";'
