@@ -1,0 +1,10 @@
+{
+  "clusterProperties": [
+    {
+      "name": "pm2.enabled",
+      "description": "Enabling PM2",
+      "hiddenProperty": false,
+      "value": "true"
+    }
+  ]
+}
