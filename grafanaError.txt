@@ -1,0 +1,13 @@
+logger=plugin.backgroundinstaller t=2026-02-03T07:22:07.280594906Z level=error msg="Failed to get plugin info" pluginId=grafana-lokiexplore-app error="Get \"https://grafana.com/api/plugins/grafana-lokiexplore-app/versions\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+logger=plugin.backgroundinstaller t=2026-02-03T07:22:07.284994605Z level=error msg="Failed to get plugin info" pluginId=grafana-pyroscope-app error="Get \"https://grafana.com/api/plugins/grafana-pyroscope-app/versions\": dial tcp: lookup grafana.com on 10.152.183.10:53: read udp 10.1.143.254:37924->10.152.183.10:53: read: connection refused"
+logger=grafana.update.checker t=2026-02-03T07:22:07.285130212Z level=error msg="Update check failed" error="failed to get stable version from grafana.com: Get \"https://grafana.com/api/grafana/versions/stable\": dial tcp: lookup grafana.com on 10.152.183.10:53: read udp 10.1.143.254:37924->10.152.183.10:53: read: connection refused" duration=9.964627521s
+logger=plugin.backgroundinstaller t=2026-02-03T07:22:17.285849817Z level=error msg="Failed to get plugin info" pluginId=grafana-exploretraces-app error="Get \"https://grafana.com/api/plugins/grafana-exploretraces-app/versions\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+logger=plugin.backgroundinstaller t=2026-02-03T07:22:17.287551777Z level=error msg="Failed to get plugin info" pluginId=grafana-metricsdrilldown-app error="Get \"https://grafana.com/api/plugins/grafana-metricsdrilldown-app/versions\": dial tcp: lookup grafana.com on 10.152.183.10:53: read udp 10.1.143.254:57026->10.152.183.10:53: read: connection refused"
+
+
+k exec -it prometheus-grafana-d6f9fc88b-bcf5f -n monitoring -- ls -l /var/lib/grafana/plugins/
+total 16
+drwxr-sr-x    5 grafana  472           4096 Feb  2 18:18 grafana-exploretraces-app
+drwxr-sr-x    3 grafana  472           4096 Feb  2 18:18 grafana-lokiexplore-app
+drwxr-sr-x    4 grafana  472           4096 Feb  2 18:18 grafana-metricsdrilldown-app
+drwxr-sr-x    5 grafana  472           4096 Feb  2 18:18 grafana-pyroscope-app
