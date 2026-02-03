@@ -11,3 +11,22 @@ drwxr-sr-x    5 grafana  472           4096 Feb  2 18:18 grafana-exploretraces-a
 drwxr-sr-x    3 grafana  472           4096 Feb  2 18:18 grafana-lokiexplore-app
 drwxr-sr-x    4 grafana  472           4096 Feb  2 18:18 grafana-metricsdrilldown-app
 drwxr-sr-x    5 grafana  472           4096 Feb  2 18:18 grafana-pyroscope-app
+
+
+logger=installer.fs t=2026-02-03T09:25:06.951254188Z level=info msg="Downloaded and extracted grafana-metricsdrilldown-app v1.0.29 zip successfully to /var/lib/grafana/plugins/grafana-metricsdrilldown-app"
+logger=plugins.registration t=2026-02-03T09:25:06.977574369Z level=info msg="Plugin registered" pluginId=grafana-metricsdrilldown-app
+logger=plugin.backgroundinstaller t=2026-02-03T09:25:06.977609388Z level=info msg="Plugin successfully installed" pluginId=grafana-metricsdrilldown-app version= duration=287.329679ms
+logger=plugin.backgroundinstaller t=2026-02-03T09:25:06.97763279Z level=info msg="Installing plugin" pluginId=grafana-lokiexplore-app version=
+logger=plugin.installer t=2026-02-03T09:25:07.74191708Z level=info msg="Installing plugin" pluginId=grafana-lokiexplore-app version=
+logger=installer.fs t=2026-02-03T09:25:07.895999218Z level=info msg="Downloaded and extracted grafana-lokiexplore-app v1.0.34 zip successfully to /var/lib/grafana/plugins/grafana-lokiexplore-app"
+logger=plugins.registration t=2026-02-03T09:25:07.928735179Z level=info msg="Plugin registered" pluginId=grafana-lokiexplore-app
+logger=plugin.backgroundinstaller t=2026-02-03T09:25:07.928768828Z level=info msg="Plugin successfully installed" pluginId=grafana-lokiexplore-app version= duration=951.131657ms
+logger=plugin.backgroundinstaller t=2026-02-03T09:25:07.928793703Z level=info msg="Installing plugin" pluginId=grafana-pyroscope-app version=
+logger=plugin.installer t=2026-02-03T09:25:08.110995601Z level=info msg="Installing plugin" pluginId=grafana-pyroscope-app version=
+logger=installer.fs t=2026-02-03T09:25:08.177786636Z level=info msg="Downloaded and extracted grafana-pyroscope-app v1.16.0 zip successfully to /var/lib/grafana/plugins/grafana-pyroscope-app"
+logger=plugins.registration t=2026-02-03T09:25:08.196650808Z level=info msg="Plugin registered" pluginId=grafana-pyroscope-app
+logger=plugin.backgroundinstaller t=2026-02-03T09:25:08.196695728Z level=info msg="Plugin successfully installed" pluginId=grafana-pyroscope-app version= duration=267.895438ms
+
+
+
+{"time": "2026-02-03T09:40:13.403601+00:00", "level": "WARNING", "msg": "Retrying (Retry(total=4, connect=10, read=5, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: CA cert does not include key usage extension (_ssl.c:1081)'))': /api/v1/secrets?labelSelector=grafana_dashboard%3D1&limit=5"}
