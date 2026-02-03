@@ -1,0 +1,145 @@
+{
+  "clusterProperties": [
+    {
+      "name": "auditVersion",
+      "checksum": "1c0278b83c46ee53872e18d6ae7a2d61bf7a2024",
+      "description": "",
+      "hiddenProperty": false,
+      "value": "1.0.1"
+    },
+    {
+      "name": "environment",
+      "checksum": "2d61945a44b017e961317b2bed79d8c7b8087694",
+      "description": "",
+      "hiddenProperty": false,
+      "value": "docker-3"
+    }
+  ],
+  "encassConfigs": [
+    {
+      "guid": "0a0322ec-b100-4c74-a420-b2a4abb00ef5",
+      "name": "Add Audit",
+      "checksum": "486479fe5edf5d699b8c8900eb98248ddec8c9ce",
+      "policyName": "Add Audit",
+      "encassArgs": [],
+      "encassResults": [],
+      "properties": [
+        {
+          "name": "allowTracing",
+          "value": "false"
+        },
+        {
+          "name": "paletteFolder",
+          "value": "customAssertions"
+        },
+        {
+          "name": "passMetricsToParent",
+          "value": "false"
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "guid": "521c4eac-e7b4-4a2e-b7de-f859fddb3e7b",
+      "name": "Add Audit",
+      "policyType": "FRAGMENT",
+      "checksum": "d66edb2aabaa4cb050acf56d6ed7ed24816dc33e",
+      "folderPath": "/aFolder/subFolder1",
+      "soap": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "Policy Fragment: Add Audit"
+            },
+            {
+              "Audit": {}
+            },
+            {
+              "AuditDetail": {
+                "detail": "<cob> Audit trace - v${gateway.auditVersion}!",
+                "level": "WARNING",
+                "loggingOnly": true
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "e7f599e5bdd2542a01cc70044f0cd08f",
+          "ordinal": 1,
+          "active": true,
+          "author": "admin",
+          "time": "2025-02-20T08:22:23.897Z",
+          "code": {
+            "All": [
+              {
+                "Comment": "Policy Fragment: Add Audit"
+              },
+              {
+                "Audit": {}
+              },
+              {
+                "AuditDetail": {
+                  "detail": "<cob> Audit trace - v${gateway.auditVersion}!",
+                  "level": "WARNING",
+                  "loggingOnly": true
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "guid": "9ca8b7a5-82b3-413a-a5a6-183c476eb673",
+      "name": "Audit Hello",
+      "resolutionPath": "/audit/hello",
+      "serviceType": "WEB_API",
+      "checksum": "e66c021ec8589dac07a593c76bb887fe85b83b19",
+      "enabled": true,
+      "folderPath": "/aFolder/subFolder2",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Encapsulated": {
+                "encassGuid": "0a0322ec-b100-4c74-a420-b2a4abb00ef5",
+                "encassName": "Add Audit"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "{\n\"message\": \"Hello!\",\n\"environment\": \"${gateway.environment}\",\n\"version\": \"8\"\n}\n",
+                "contentType": "application/json; charset=UTF-8"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "be3292b3-d1b8-4c62-857a-19a4599df63c",
+      "name": "Gateway Graphman Bundle - 2025-02-20T08:27:30.402Z",
+      "author": "admin",
+      "hostname": "localhost",
+      "timestamp": "2025-02-20T08:27:30.402Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}
