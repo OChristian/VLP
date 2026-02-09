@@ -22,6 +22,20 @@ spec:
     resources:
       requests: {}
       limits: {}
+#    externalKeys:
+#      - name: gatewaytls
+#        alias: vlp
+#        keyUsageType: SSL
+#        enabled: true
+#    externalCerts:
+#    - name: gatewaytls
+#      enabled: true
+#      trustAnchor: false
+#      revocationCheckPolicyType: USE_DEFAULT
+#      trustedFor:
+#      - "SSL"
+#      - "SIGNING_SERVER_CERTS"
+#      verifyHostname: false
     otk:
       enabled: true
       initContainerImage: docker.io/caapim/otk-install:4.6.4
@@ -59,7 +73,7 @@ spec:
           maximumPoolSize: 15
         sql:
           databaseName: otk_db
-          jdbcUrl: jdbc:mysql://mysql.default.svc.cluster.local:3306/otk_db?allowPublicKeyRetrieval=true
+          jdbcUrl: jdbc:mysql://mysql.otk.svc.cluster.local:3306/otk_db?allowPublicKeyRetrieval=true
           jdbcDriverClass: com.mysql.cj.jdbc.Driver
           connectionProperties:
             c3p0.maxConnectionAge: "100"
@@ -82,6 +96,7 @@ spec:
     hazelcast:
       external: false
       endpoint: hazelcast.example.com:5701
+
     management:
       secretName: gateway-secret
       service:
@@ -110,10 +125,10 @@ spec:
         port: 8443
         targetPort: 8443
         protocol: TCP
-      - name: management
-        port: 9443
-        targetPort: 9443
-        protocol: TCP
+#      - name: management
+#        port: 9443
+#        targetPort: 9443
+#        protocol: TCP
     ingress:
       enabled: true
       ingressClassName: nginx
@@ -122,9 +137,11 @@ spec:
       tls:
       - hosts: 
         - otk.brcmlabs.com
-        secretName: brcmlabs
+        - otk-pm.brcmlabs.com
+        secretName: gatewaytls
       rules:
       - host: otk.brcmlabs.com
+      - host: otk-pm.brcmlabs.com
         http:
           paths:
           - backend:
@@ -259,6 +276,8 @@ spec:
             com.l7tech.external.assertions.comparison.server.ServerComparisonAssertion.level = SEVERE
         - name: audit.setDetailLevel.FINE
           value: 152 7101 7103 9648 9645 7026 7027 4155 150 4716 4114 6306 4100 9655 150 151 11000 4104
+        - name: otk.port
+          value: "443"
     system:
       properties: |-
         # Default Gateway system properties
