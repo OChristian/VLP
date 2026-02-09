@@ -37,7 +37,7 @@ spec:
       - "SIGNING_SERVER_CERTS"
       verifyHostname: false
     customHosts:
-      enabled: false
+      enabled: true
       hostAliases:
         - hostnames:
           - "otk.brcmlabs.com"
