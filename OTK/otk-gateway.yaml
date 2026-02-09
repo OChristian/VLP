@@ -27,15 +27,22 @@ spec:
 #        alias: vlp
 #        keyUsageType: SSL
 #        enabled: true
-#    externalCerts:
-#    - name: gatewaytls
-#      enabled: true
-#      trustAnchor: false
-#      revocationCheckPolicyType: USE_DEFAULT
-#      trustedFor:
-#      - "SSL"
-#      - "SIGNING_SERVER_CERTS"
-#      verifyHostname: false
+    externalCerts:
+    - name: gatewaytls
+      enabled: true
+      trustAnchor: true
+      revocationCheckPolicyType: USE_DEFAULT
+      trustedFor:
+      - "SSL"
+      - "SIGNING_SERVER_CERTS"
+      verifyHostname: false
+    customHosts:
+      enabled: false
+      hostAliases:
+        - hostnames:
+          - "otk.brcmlabs.com"
+          - "otk-pm.brcmlabs.com"
+          ip: "127.0.0.1"
     otk:
       enabled: true
       initContainerImage: docker.io/caapim/otk-install:4.6.4
