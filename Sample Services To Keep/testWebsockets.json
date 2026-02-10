@@ -1,0 +1,292 @@
+{
+  "services": [
+    {
+      "guid": "d14deedd-3e04-43b8-a2bf-52346f00e58e",
+      "name": "Test Websocket - In",
+      "resolutionPath": "/wsi",
+      "serviceType": "WEB_API",
+      "checksum": "7e7d28c510e7dc7cedf399c718236345335e2788",
+      "enabled": true,
+      "folderPath": "/TestWebsockets",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "properties": [
+        {
+          "name": "latencyMetrics.settings",
+          "value": "false|INTERVAL|15000"
+        },
+        {
+          "name": "latencyMetrics.subservices",
+          "value": ""
+        },
+        {
+          "name": "latencyMetrics.captureClientAndFolder",
+          "value": "true|false"
+        }
+      ],
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Audit": {}
+            },
+            {
+              "AuditDetail": {
+                "detail": "<cob-ws.wsi> ${request.mainpart}",
+                "level": "WARNING"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "${request.mainpart}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "guid": "f35ebd2f-d353-45af-9769-c382e91b80ba",
+      "name": "Test Websocket - Out",
+      "resolutionPath": "/wso",
+      "serviceType": "WEB_API",
+      "checksum": "06bf9329b2b1b28dc1e2de5ba6886202de551edc",
+      "enabled": true,
+      "folderPath": "/TestWebsockets",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "properties": [
+        {
+          "name": "latencyMetrics.settings",
+          "value": "false|INTERVAL|15000"
+        },
+        {
+          "name": "latencyMetrics.subservices",
+          "value": ""
+        },
+        {
+          "name": "latencyMetrics.captureClientAndFolder",
+          "value": "true|false"
+        }
+      ],
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Audit": {}
+            },
+            {
+              "AuditDetail": {
+                "detail": "<cob-ws.wso> ${request.mainpart}",
+                "loggingOnly": true
+              }
+            },
+            {
+              "Regex": {
+                "autoTarget": false,
+                "regex": "time",
+                "regexName": "Replace \"time\" with \"heure\"",
+                "replace": true,
+                "replacement": "heure"
+              }
+            },
+            {
+              "AuditDetail": {
+                "detail": "<cob-ws.wso : after filtering> ${request.mainpart}",
+                "loggingOnly": true
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "${request.mainpart}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "guid": "9d74df7f-bfeb-438e-bf78-e9a7f276aad8",
+      "name": "Test Websocket connect be",
+      "resolutionPath": "/wscbe",
+      "serviceType": "WEB_API",
+      "checksum": "a97d8a58962f666606f8edb5d0616574a422e6da",
+      "enabled": true,
+      "folderPath": "/TestWebsockets",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "properties": [
+        {
+          "name": "latencyMetrics.settings",
+          "value": "false|INTERVAL|15000"
+        },
+        {
+          "name": "latencyMetrics.subservices",
+          "value": ""
+        },
+        {
+          "name": "latencyMetrics.captureClientAndFolder",
+          "value": "true|false"
+        }
+      ],
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "*** !!!! *** When activating for connecting to back-end, the echo no longer works???"
+            },
+            {
+              "Comment": "I believe ${request.mainpart} is needed to keep the websocket format with the various HTML tags"
+            },
+            {
+              "Audit": {}
+            },
+            {
+              "SetVariable": {
+                "expression": "192.168.1.60:10000",
+                "variable": "ws-server"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "john",
+                "variable": "loginId"
+              }
+            },
+            {
+              "AuditDetail": {
+                "detail": "<cob-ws.wscbe> Connecting to ${ws-server} as ${loginId}"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "${request.mainpart}"
+              },
+              ".properties": {
+                ".enabled": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "guid": "8c2536cc-7b63-4723-bd78-99b5750db72c",
+      "name": "Test Websocket connect",
+      "resolutionPath": "/wsc",
+      "serviceType": "WEB_API",
+      "checksum": "976270717b3aec3a3886383e05161e94c48a1465",
+      "enabled": true,
+      "folderPath": "/TestWebsockets",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "properties": [
+        {
+          "name": "latencyMetrics.settings",
+          "value": "false|INTERVAL|15000"
+        },
+        {
+          "name": "latencyMetrics.subservices",
+          "value": ""
+        },
+        {
+          "name": "latencyMetrics.captureClientAndFolder",
+          "value": "true|false"
+        }
+      ],
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Audit": {}
+            },
+            {
+              "SetVariable": {
+                "expression": "john",
+                "variable": "allowed_user"
+              }
+            },
+            {
+              "AuditDetail": {
+                "detail": "<cob-ws.wsc> Connecting web socket"
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "ComparisonAssertion": {
+                        "expression1": "${request.http.parameter.name}",
+                        "expression2": "${allowed_user}",
+                        "predicates": [
+                          {
+                            ".type": ":binary",
+                            "rightValue": "${allowed_user}"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "True": {}
+                    }
+                  ]
+                },
+                {
+                  "All": [
+                    {
+                      "AuditDetail": {
+                        "detail": "<cob-ws.wsc> User is not allowed to connect!"
+                      }
+                    },
+                    {
+                      "RaiseError": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "e6260364-ac3e-4c98-b3d6-5c094b5ba07f",
+      "name": "Gateway Graphman Bundle - 2025-01-23T18:35:09.983Z",
+      "author": "admin",
+      "hostname": "ssg.mgt.com",
+      "timestamp": "2025-01-23T18:35:09.983Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

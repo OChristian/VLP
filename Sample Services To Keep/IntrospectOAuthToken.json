@@ -1,0 +1,135 @@
+{
+  "clusterProperties": [
+    {
+      "name": "oauth2.introspection.defaultTokenIssuer",
+      "checksum": "a76e066c2a81e689925c33e64a13c46a39d263bc",
+      "description": "Default OAuth Token Issuer. Choose one among the known OAuth Token Issuers as the default.",
+      "hiddenProperty": false,
+      "value": "Layer7 OAuth Toolkit"
+    },
+    {
+      "name": "oauth2.introspection.knownTokenIssuers",
+      "checksum": "78b45054897b2615750ca2c046c00a211e9337b7",
+      "description": "Known OAuth Token Issuers details as JSON Array.",
+      "hiddenProperty": false,
+      "value": "[ {\n  \"enabled\" : true,\n  \"issuer\" : \"Layer7 OAuth Toolkit\",\n  \"introspection_endpoint\" : \"https://192.168.1.160:8443/auth/oauth/v2/introspect\",\n  \"jwks_uri\" : \"https://192.168.1.160:8443/openid/connect/jwks.json\",\n  \"token_type\" : \"OPAQUE\",\n  \"properties\" : {\n    \"client_id\" : \"54f0c455-4d80-421f-82ca-9194df24859d\",\n    \"client_secret\" : \"a0f2742f-31c7-436f-9802-b7015b8fd8e6\",\n    \"leeway\" : 60,\n    \"token_cache_size\" : 1000,\n    \"token_cache_item_lifetime\" : 300\n  }\n} ]"
+    }
+  ],
+  "services": [
+    {
+      "guid": "8766202f-d58d-4e5d-84fc-f62b927c470a",
+      "name": "Introspect",
+      "resolutionPath": "/introspect",
+      "serviceType": "WEB_API",
+      "checksum": "786e48a1267341b9bef9c0d2e00f17f0795bd25b",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "FaultLevel": {
+                "levelInfo": {
+                  ".type": "soapFaultLevel",
+                  "level": 4
+                }
+              }
+            },
+            {
+              "OAuth2Introspection": {}
+            },
+            {
+              "HardcodedResponse": {
+                "body": "It works!"
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "039febeaec320fce19413ea5ac16bae8",
+          "ordinal": 1,
+          "active": false,
+          "author": "admin",
+          "time": "2025-01-22T14:17:59.219Z",
+          "code": {
+            "All": []
+          }
+        },
+        {
+          "goid": "039febeaec320fce19413ea5ac16bb21",
+          "ordinal": 2,
+          "active": false,
+          "author": "admin",
+          "time": "2025-01-22T14:18:40.504Z",
+          "code": {
+            "All": [
+              {
+                "OAuth2Introspection": {}
+              }
+            ]
+          }
+        },
+        {
+          "goid": "039febeaec320fce19413ea5ac16bb23",
+          "ordinal": 3,
+          "active": false,
+          "author": "admin",
+          "time": "2025-01-22T14:33:19.235Z",
+          "code": {
+            "All": [
+              {
+                "FaultLevel": {
+                  "levelInfo": {
+                    ".type": "soapFaultLevel",
+                    "level": 4
+                  }
+                }
+              },
+              {
+                "OAuth2Introspection": {}
+              }
+            ]
+          }
+        },
+        {
+          "goid": "039febeaec320fce19413ea5ac16bb24",
+          "ordinal": 4,
+          "active": true,
+          "author": "admin",
+          "time": "2025-01-22T14:33:33.261Z",
+          "code": {
+            "All": [
+              {
+                "FaultLevel": {
+                  "levelInfo": {
+                    ".type": "soapFaultLevel",
+                    "level": 4
+                  }
+                }
+              },
+              {
+                "OAuth2Introspection": {}
+              },
+              {
+                "HardcodedResponse": {
+                  "body": "It works!"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

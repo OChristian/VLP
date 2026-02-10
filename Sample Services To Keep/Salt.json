@@ -1,0 +1,1269 @@
+{
+  "clusterProperties": [
+    {
+      "name": "salt.cache",
+      "checksum": "85dfe87fe5b00de73a8be9e541c1411c0d58c802",
+      "description": "",
+      "hiddenProperty": false,
+      "value": "ipList"
+    }
+  ],
+  "internalIdps": [
+    {
+      "name": "Internal Identity Provider",
+      "checksum": "909dcb79418e5aaca75df96cc0ec2b2cbc3bdef4",
+      "certValidation": "USE_DEFAULT"
+    }
+  ],
+  "keys": [
+    {
+      "keystoreId": "00000000000000000000000000000002",
+      "alias": "SSL",
+      "checksum": "93bcad6a3f507f565691c5f53736ac63276eabdc",
+      "keyType": "RSA",
+      "usageTypes": [
+        "SSL"
+      ],
+      "subjectDn": "CN=ims-debian-server.lan",
+      "p12": "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",
+      "certChain": [
+        "-----BEGIN CERTIFICATE-----\nMIIDBTCCAe2gAwIBAgIJAM8oOcumepTbMA0GCSqGSIb3DQEBDAUAMCAxHjAcBgNVBAMTFWltcy1k\r\nZWJpYW4tc2VydmVyLmxhbjAeFw0yNDAxMDkxMjQ0MjJaFw0zNDAxMDYxMjQ0MjJaMCAxHjAcBgNV\r\nBAMTFWltcy1kZWJpYW4tc2VydmVyLmxhbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB\r\nAPMtgARAl0pmiLazAbtdmsywqjUJDWnBm//bZ+WpxxavIjyniDXRiXMFlD5wMTdKmllwu7+EncUI\r\nE9Eqkv1blKXGZj4UsPbEBXCZiysbNt0O1YVvZJ+SQC6e6vFwYFoVak0uNASOch2eP7KVxFrNKC1a\r\n5e7thZ802HvLBPTkUfRoGHK/v6J/E3s2RAV/8QpoV+W2PrMcLzmn9Tze/0L6i96shCIiJ0hYrY8d\r\nvYLhQE+w0LGVq5g2S0fxz91fLniqDU542NtG6bJ+w/KM1D4btQXlae+P74BGthjn7gAUNbsyee9/\r\nvDg7RPF/4PsTPq87qAflFVIpHiCXlfk1VQ8CGj0CAwEAAaNCMEAwHQYDVR0OBBYEFKQej3zr9Pp/\r\n+6Ex7rGBzGvcJYC7MB8GA1UdIwQYMBaAFKQej3zr9Pp/+6Ex7rGBzGvcJYC7MA0GCSqGSIb3DQEB\r\nDAUAA4IBAQC06DENGMcwP48D3KDMNNMJmkqQrG0sJe79fikwqZRdJW5d/qljfWvJJh3A8aRu7GSy\r\npcPtOgxIZfa1pylm/1uZSvt92r0eiphnFbFcxaoktGYJEm8hClTT+KrrNa38w/Uy+wrSL5PwWVJw\r\nOd//DkyX0iB8UxYeSGFsGZEsQ1dX2ZVWm9X5Jb8jAjzPjydHtkOkxgMt8znyWR1VlD+xH1zSaTXQ\r\nNbKLuOOD8rmEYQtJXjZrEJr0bvrf/OrlItqbKmvyvI7on33BAeP/4yXFkgB3R5caTS/BDpUbrLBy\r\nhwl4LMZddeI7lrx0nDR5vOHG7tVqsQRQOR3ufKsviBuXbU4h\n-----END CERTIFICATE-----\n"
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "guid": "139c81d0-3e1f-4272-be5b-3caa9392e195",
+      "name": "Salt Data - Get IP",
+      "policyType": "FRAGMENT",
+      "checksum": "4ee0523c87424e23e1a853bae7b896d0114ae638",
+      "folderPath": "/Salt",
+      "soap": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "This fragment is to extract the IP from Salt provided data"
+            },
+            {
+              "SetVariable": {
+                "contentType": "application/json; charset=utf-8",
+                "dataType": "message",
+                "expression": "{\r\n    values:   [\r\n        {\r\n        \"key\": \"timestamp\",\r\n        \"value\": \"$TIMESTAMP\"\r\n        }, \r\n        {\r\n        \"key\":\"environment\",\r\n        \"value\": \"$ENVIRONMENT_NAME\" \r\n        },\r\n        {\r\n        \"key\":\"ip\",\r\n        \"value\": \"192.168.1.10\" \r\n        }\r\n      ]    \r\n  }",
+                "variable": "saltIn"
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "ComparisonAssertion": {
+                        "expression1": "${request.http.parameters.ip}",
+                        "expression2": "",
+                        "negate": true,
+                        "operator": "EMPTY",
+                        "predicates": [
+                          {
+                            ".type": ":binary",
+                            "negated": true,
+                            "operator": "EMPTY",
+                            "rightValue": ""
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "expression": "${request.http.parameters.ip}\r\n\r\n",
+                        "variable": "newIP"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "All": [
+                    {
+                      "JsonTransformation": {
+                        "destinationMessageTarget": {
+                          ".type": "messageTargetableSupport",
+                          "targetModifiedByGateway": true
+                        },
+                        "otherTargetMessageVariable": "saltIn",
+                        "prettyPrint": true,
+                        "rootTagString": "salt",
+                        "target": "OTHER",
+                        "transformation": "JSON_to_XML"
+                      }
+                    },
+                    {
+                      "RequestXpath": {
+                        "variablePrefix": "result",
+                        "xpathExpression": {
+                          ".type": "xpathExpression",
+                          "expression": "/salt/values[key='ip']/value/text()",
+                          "namespaces": {
+                            "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                          },
+                          "xpathVersion": "XPATH_2_0"
+                        }
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "expression": "${result.result}",
+                        "variable": "newIP"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "039febeaec320fce19413ea5ac16bb5b",
+          "ordinal": 1,
+          "active": true,
+          "author": "admin",
+          "time": "2025-01-23T18:36:59.938Z",
+          "code": {
+            "All": [
+              {
+                "Comment": "This fragment is to extract the IP from Salt provided data"
+              },
+              {
+                "SetVariable": {
+                  "contentType": "application/json; charset=utf-8",
+                  "dataType": "message",
+                  "expression": "{\r\n    values:   [\r\n        {\r\n        \"key\": \"timestamp\",\r\n        \"value\": \"$TIMESTAMP\"\r\n        }, \r\n        {\r\n        \"key\":\"environment\",\r\n        \"value\": \"$ENVIRONMENT_NAME\" \r\n        },\r\n        {\r\n        \"key\":\"ip\",\r\n        \"value\": \"192.168.1.10\" \r\n        }\r\n      ]    \r\n  }",
+                  "variable": "saltIn"
+                }
+              },
+              {
+                "OneOrMore": [
+                  {
+                    "All": [
+                      {
+                        "ComparisonAssertion": {
+                          "expression1": "${request.http.parameters.ip}",
+                          "expression2": "",
+                          "negate": true,
+                          "operator": "EMPTY",
+                          "predicates": [
+                            {
+                              ".type": ":binary",
+                              "negated": true,
+                              "operator": "EMPTY",
+                              "rightValue": ""
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "SetVariable": {
+                          "expression": "${request.http.parameters.ip}\r\n\r\n",
+                          "variable": "newIP"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "All": [
+                      {
+                        "JsonTransformation": {
+                          "destinationMessageTarget": {
+                            ".type": "messageTargetableSupport",
+                            "targetModifiedByGateway": true
+                          },
+                          "otherTargetMessageVariable": "saltIn",
+                          "prettyPrint": true,
+                          "rootTagString": "salt",
+                          "target": "OTHER",
+                          "transformation": "JSON_to_XML"
+                        }
+                      },
+                      {
+                        "RequestXpath": {
+                          "variablePrefix": "result",
+                          "xpathExpression": {
+                            ".type": "xpathExpression",
+                            "expression": "/salt/values[key='ip']/value/text()",
+                            "namespaces": {
+                              "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                            },
+                            "xpathVersion": "XPATH_2_0"
+                          }
+                        }
+                      },
+                      {
+                        "SetVariable": {
+                          "expression": "${result.result}",
+                          "variable": "newIP"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "8fe1cc53-9428-46b4-ae1f-1447a6bf101d",
+      "name": "Salt Data - Get Service",
+      "policyType": "FRAGMENT",
+      "checksum": "fd252fee52e8ca8a53f5c7a02b33a476fe8986f2",
+      "folderPath": "/Salt",
+      "soap": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "This fragment is to extract the Service from Salt provided data"
+            },
+            {
+              "SetVariable": {
+                "contentType": "application/json; charset=utf-8",
+                "dataType": "message",
+                "expression": "{\r\n    values:   [\r\n        {\r\n        \"key\": \"timestamp\",\r\n        \"value\": \"$TIMESTAMP\"\r\n        }, \r\n        {\r\n        \"key\":\"environment\",\r\n        \"value\": \"$ENVIRONMENT_NAME\" \r\n        },\r\n        {\r\n        \"key\":\"ip\",\r\n        \"value\": \"192.168.1.10\" \r\n        },\r\n        {\r\n        \"key\":\"ServicePath\",\r\n        \"value\": \"/salt/test/customer/123\" \r\n        }\r\n      ]    \r\n  }",
+                "variable": "saltIn"
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "JsonTransformation": {
+                        "destinationMessageTarget": {
+                          ".type": "messageTargetableSupport",
+                          "targetModifiedByGateway": true
+                        },
+                        "otherTargetMessageVariable": "saltIn",
+                        "prettyPrint": true,
+                        "rootTagString": "salt",
+                        "target": "OTHER",
+                        "transformation": "JSON_to_XML"
+                      }
+                    },
+                    {
+                      "RequestXpath": {
+                        "variablePrefix": "result",
+                        "xpathExpression": {
+                          ".type": "xpathExpression",
+                          "expression": "normalize-space(/salt/values[key='ServicePath']/value/text())",
+                          "namespaces": {
+                            "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                          },
+                          "xpathVersion": "XPATH_2_0"
+                        }
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "expression": "${result.result}",
+                        "variable": "servicePath"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "039febeaec320fce19413ea5ac16bb5d",
+          "ordinal": 1,
+          "active": true,
+          "author": "admin",
+          "time": "2025-01-23T18:36:59.943Z",
+          "code": {
+            "All": [
+              {
+                "Comment": "This fragment is to extract the Service from Salt provided data"
+              },
+              {
+                "SetVariable": {
+                  "contentType": "application/json; charset=utf-8",
+                  "dataType": "message",
+                  "expression": "{\r\n    values:   [\r\n        {\r\n        \"key\": \"timestamp\",\r\n        \"value\": \"$TIMESTAMP\"\r\n        }, \r\n        {\r\n        \"key\":\"environment\",\r\n        \"value\": \"$ENVIRONMENT_NAME\" \r\n        },\r\n        {\r\n        \"key\":\"ip\",\r\n        \"value\": \"192.168.1.10\" \r\n        },\r\n        {\r\n        \"key\":\"ServicePath\",\r\n        \"value\": \"/salt/test/customer/123\" \r\n        }\r\n      ]    \r\n  }",
+                  "variable": "saltIn"
+                }
+              },
+              {
+                "OneOrMore": [
+                  {
+                    "All": [
+                      {
+                        "JsonTransformation": {
+                          "destinationMessageTarget": {
+                            ".type": "messageTargetableSupport",
+                            "targetModifiedByGateway": true
+                          },
+                          "otherTargetMessageVariable": "saltIn",
+                          "prettyPrint": true,
+                          "rootTagString": "salt",
+                          "target": "OTHER",
+                          "transformation": "JSON_to_XML"
+                        }
+                      },
+                      {
+                        "RequestXpath": {
+                          "variablePrefix": "result",
+                          "xpathExpression": {
+                            ".type": "xpathExpression",
+                            "expression": "normalize-space(/salt/values[key='ServicePath']/value/text())",
+                            "namespaces": {
+                              "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                            },
+                            "xpathVersion": "XPATH_2_0"
+                          }
+                        }
+                      },
+                      {
+                        "SetVariable": {
+                          "expression": "${result.result}",
+                          "variable": "servicePath"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "5c7b60f4-9b64-41c4-a41d-c5aed41e8f12",
+      "name": "Salt-Message received",
+      "policyType": "FRAGMENT",
+      "checksum": "a400f24f64585324e51d7e41e42f7ed061ec97dc",
+      "folderPath": "/Salt",
+      "soap": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "Custom fragment included in \"Custom Message Received\" to block malicious IP"
+            },
+            {
+              "FaultLevel": {
+                "levelInfo": {
+                  ".type": "soapFaultLevel",
+                  "faultTemplate": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Body>\n        <soapenv:Fault>\n            <faultcode>401</faultcode>\n            <faultstring>IP</faultstring>\n            <faultactor>Blocked IP</faultactor>\n            <detail>This IP has been blacklisted.</detail>\n        </soapenv:Fault>\n    </soapenv:Body>\n</soapenv:Envelope>",
+                  "level": 1
+                }
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "${request.http.parameters.ip}",
+                "variable": "ip"
+              }
+            },
+            {
+              "AuditDetail": {
+                "detail": "----> Policy Fragment: custom-message-received. IP=${ip}",
+                "loggingOnly": true
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "CacheLookup": {
+                        "cacheEntryKey": "${gateway.salt.cache}",
+                        "contentTypeOverride": "",
+                        "otherTargetMessageVariable": "ipBlackList",
+                        "target": "OTHER"
+                      }
+                    },
+                    {
+                      "OneOrMore": [
+                        {
+                          "All": [
+                            {
+                              "ComparisonAssertion": {
+                                "expression1": "${ip}",
+                                "expression2": "",
+                                "negate": true,
+                                "operator": "EMPTY",
+                                "predicates": [
+                                  {
+                                    ".type": ":binary",
+                                    "negated": true,
+                                    "operator": "EMPTY",
+                                    "rightValue": ""
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "Regex": {
+                                "autoTarget": false,
+                                "captureVar": "ip",
+                                "otherTargetMessageVariable": "ipBlackList",
+                                "patternContainsVariables": true,
+                                "regex": "^${ip}$",
+                                "regexName": "IP Match",
+                                "regexVar": "match",
+                                "replacement": "",
+                                "target": "OTHER"
+                              }
+                            },
+                            {
+                              "SetVariable": {
+                                "expression": "The IP: ${ip} was found and access is blocked!",
+                                "variable": "respMsg"
+                              }
+                            },
+                            {
+                              "AuditDetail": {
+                                "detail": "----> Policy Fragment: custom-message-received. ${respMsg}",
+                                "loggingOnly": true
+                              }
+                            },
+                            {
+                              "RaiseError": {}
+                            }
+                          ]
+                        },
+                        {
+                          "All": [
+                            {
+                              "SetVariable": {
+                                "expression": "The IP: ${ip} was not found and access is allowed.",
+                                "variable": "respMsg"
+                              }
+                            },
+                            {
+                              "AuditDetail": {
+                                "detail": "----> Policy Fragment: custom-message-received. ${respMsg}",
+                                "loggingOnly": true
+                              }
+                            },
+                            {
+                              "True": {}
+                            }
+                          ]
+                        }
+                      ],
+                      ".properties": {
+                        ".right.comment": "// Block access to APIs if IP match blacklisted ones"
+                      }
+                    }
+                  ],
+                  ".properties": {
+                    ".right.comment": "Cache not empty"
+                  }
+                },
+                {
+                  "All": [
+                    {
+                      "True": {}
+                    }
+                  ],
+                  ".properties": {
+                    ".right.comment": "Cache empty"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "services": [
+    {
+      "guid": "31656abe-2f86-4fce-afd5-7d479dbcb82c",
+      "name": "Block IP",
+      "resolutionPath": "/salt/block/ip",
+      "serviceType": "WEB_API",
+      "checksum": "dfc5b9f7a5df286c1af1d44e2675b4bb75034c93",
+      "enabled": true,
+      "folderPath": "/Salt",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "FaultLevel": {
+                "levelInfo": {
+                  ".type": "soapFaultLevel",
+                  "level": 4
+                }
+              }
+            },
+            {
+              "Include": {
+                "policyGuid": "139c81d0-3e1f-4272-be5b-3caa9392e195",
+                "policyName": "Salt Data - Get IP"
+              }
+            },
+            {
+              "Comment": "1st call, cache is empty - add the IP received"
+            },
+            {
+              "Comment": "Afterwards, cache has an entry - add the IP received to the list"
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "CacheLookup": {
+                        "cacheEntryKey": "${gateway.salt.cache}",
+                        "contentTypeOverride": "",
+                        "otherTargetMessageVariable": "currentIPList",
+                        "target": "OTHER"
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "expression": "${currentIPList.mainpart}${newIP}",
+                        "variable": "newIPList"
+                      }
+                    },
+                    {
+                      "CacheStorage": {
+                        "cacheEntryKey": "${gateway.salt.cache}",
+                        "maxEntryAgeSeconds": "600",
+                        "otherTargetMessageVariable": "newIPList",
+                        "target": "OTHER"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "All": [
+                    {
+                      "CacheStorage": {
+                        "cacheEntryKey": "${gateway.salt.cache}",
+                        "maxEntryAgeSeconds": "600",
+                        "otherTargetMessageVariable": "newIP",
+                        "target": "OTHER"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "CacheLookup": {
+                "cacheEntryKey": "${gateway.salt.cache}",
+                "contentTypeOverride": ""
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "guid": "82f61fbb-001c-47df-b37a-2671a789e5c1",
+      "name": "Block Service",
+      "resolutionPath": "/salt/block/service",
+      "serviceType": "WEB_API",
+      "checksum": "712372d95fa269a04fb2b50c8b05f986714e4669",
+      "enabled": true,
+      "folderPath": "/Salt",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "FaultLevel": {
+                "levelInfo": {
+                  ".type": "soapFaultLevel",
+                  "level": 4
+                }
+              }
+            },
+            {
+              "HttpBasic": {},
+              ".properties": {
+                ".right.comment": "// Needed for Graphman access"
+              }
+            },
+            {
+              "Authentication": {
+                "identityProviderOid": "0000000000000000fffffffffffffffe"
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "Include": {
+                        "policyGuid": "8fe1cc53-9428-46b4-ae1f-1447a6bf101d",
+                        "policyName": "Salt Data - Get Service"
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "expression": "The service with path \"${servicePath}\" could not be resolved.\r\n",
+                        "variable": "errorMessage"
+                      }
+                    },
+                    {
+                      "ResolveService": {
+                        "uri": "${servicePath}"
+                      }
+                    },
+                    {
+                      "All": [
+                        {
+                          "SetVariable": {
+                            "expression": "Internal issue in processing the request.\r\nThe service \"${resolvedService.name}\" has not been blocked.",
+                            "variable": "errorMessage"
+                          }
+                        },
+                        {
+                          "All": [
+                            {
+                              "SetVariable": {
+                                "expression": "query webApiServicesByName ($name: String!) {\r\n        webApiServices:webApiServicesByName (name: $name) {\r\n              goid\r\n              name\r\n              resolutionPath\r\n          }\r\n     } \r\n     ",
+                                "variable": "gqlQuery"
+                              }
+                            },
+                            {
+                              "SetVariable": {
+                                "expression": "{\"name\":\"${resolvedService.name}\"}",
+                                "variable": "gqlVariable"
+                              }
+                            },
+                            {
+                              "GatewayGraphQL": {
+                                "encPass": "",
+                                "query": "${gqlQuery}",
+                                "queryOptions": "",
+                                "target": "RESPONSE",
+                                "variables": "${gqlVariable}"
+                              }
+                            },
+                            {
+                              "EvaluateJsonPathExpressionV2": {
+                                "expression": "data.webApiServices",
+                                "target": "RESPONSE"
+                              }
+                            },
+                            {
+                              "SetVariable": {
+                                "contentType": "application/json; charset=utf-8",
+                                "dataType": "message",
+                                "expression": "[${jsonPath.results}]",
+                                "variable": "webApiServices"
+                              }
+                            },
+                            {
+                              "JsonTransformation": {
+                                "otherTargetMessageVariable": "webApiServices",
+                                "rootTagString": "webApiServices",
+                                "target": "OTHER",
+                                "transformation": "JSON_to_XML"
+                              }
+                            },
+                            {
+                              "SetVariable": {
+                                "expression": "normalize-space(/webApiServices/value[goid=('${resolvedService.oid}')]/resolutionPath/text())",
+                                "variable": "xPath"
+                              }
+                            },
+                            {
+                              "ResponseXpath": {
+                                "variablePrefix": "servicePath",
+                                "xpathExpression": {
+                                  ".type": "xpathExpression",
+                                  "expression": "${xPath}",
+                                  "namespaces": {
+                                    "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                                  },
+                                  "xpathVersion": "XPATH_1_0"
+                                }
+                              }
+                            }
+                          ],
+                          ".properties": {
+                            ".right.comment": "// Get Service Path"
+                          }
+                        },
+                        {
+                          "All": [
+                            {
+                              "SetVariable": {
+                                "expression": "query serviceWithDependencies ($resolutionPath: String!) {\r\n    webApiServices:webApiServiceByResolutionPath (resolutionPath: $resolutionPath) {\r\n        goid\r\n        guid\r\n        name\r\n        resolutionPath\r\n        checksum\r\n\r\n        enabled\r\n        folderPath\r\n        methodsAllowed\r\n        properties {name value}\r\n        tracingEnabled\r\n        wssProcessingEnabled\r\n        policy {\r\n            xml\r\n        }\r\n    }\r\n}",
+                                "variable": "gqlQuery"
+                              }
+                            },
+                            {
+                              "SetVariable": {
+                                "expression": "{\"resolutionPath\":\"${servicePath.result}\"}",
+                                "variable": "gqlVariable"
+                              }
+                            },
+                            {
+                              "GatewayGraphQL": {
+                                "encPass": "",
+                                "query": "${gqlQuery}",
+                                "queryOptions": "",
+                                "target": "RESPONSE",
+                                "variables": "${gqlVariable}"
+                              }
+                            },
+                            {
+                              "All": [
+                                {
+                                  "EvaluateJsonPathExpressionV2": {
+                                    "expression": "data.webApiServices",
+                                    "target": "RESPONSE"
+                                  }
+                                },
+                                {
+                                  "SetVariable": {
+                                    "contentType": "application/json; charset=utf-8",
+                                    "dataType": "message",
+                                    "expression": "{\r\n\"webApiServices\": [\r\n${jsonPath.result}\r\n],\r\n  \"properties\": {\r\n    \"defaultAction\": \"NEW_OR_UPDATE\"\r\n  }\r\n}",
+                                    "variable": "graphmanBundle"
+                                  }
+                                }
+                              ],
+                              ".properties": {
+                                ".right.comment": "// Create bundle from Graphman response"
+                              }
+                            }
+                          ],
+                          ".properties": {
+                            ".right.comment": "// Get Service Bundle"
+                          }
+                        },
+                        {
+                          "All": [
+                            {
+                              "Regex": {
+                                "autoTarget": false,
+                                "captureVar": "svc",
+                                "caseInsensitive": true,
+                                "includeEntireExpressionCapture": false,
+                                "otherTargetMessageVariable": "graphmanBundle",
+                                "regex": "(\"enabled\":true)",
+                                "regexName": "Set Enabled to False",
+                                "regexVar": "match",
+                                "replace": true,
+                                "replacement": "\"enabled\":false",
+                                "target": "OTHER"
+                              }
+                            }
+                          ],
+                          ".properties": {
+                            ".right.comment": "// Change \"enable\" to false"
+                          }
+                        },
+                        {
+                          "All": [
+                            {
+                              "SetVariable": {
+                                "expression": "mutation applyBundle (\r\n    $activeConnectors: [ActiveConnectorInput!]!=[],\r\n    $administrativeUserAccountProperties: [AdministrativeUserAccountPropertyInput!]!=[],\r\n    $backgroundTaskPolicies:[BackgroundTaskPolicyInput!]!=[],\r\n    $cassandraConnections:[CassandraConnectionInput!]!=[],\r\n    $clusterProperties: [ClusterPropertyInput!]!=[],\r\n    $dtds:[DtdInput!]!=[],\r\n    $emailListeners: [EmailListenerInput!]!=[],\r\n    $encassConfigs:[EncassConfigInput!]!=[],\r\n    $fipGroups:[FipGroupInput!]!=[],\r\n    $fipUsers:[FipUserInput!]!=[],\r\n    $fips:[FipInput!]!=[],\r\n    $globalPolicies:[GlobalPolicyInput!]!=[],\r\n    $internalGroups:[InternalGroupInput!]!=[],\r\n    $internalSoapServices:[SoapServiceInput!]!=[],\r\n    $internalUsers:[InternalUserInput!]!=[],\r\n    $internalWebApiServices: [WebApiServiceInput!]!=[],\r\n    $jdbcConnections:[JdbcConnectionInput!]!=[],\r\n    $jmsDestinations:[JmsDestinationInput!]!=[],\r\n    $keys: [KeyInput!]!=[],\r\n    $ldaps:[LdapInput!]!=[],\r\n    $listenPorts: [ListenPortInput!]!=[],\r\n    $passwordPolicies:[PasswordPolicyInput!]!=[],\r\n    $policyFragments: [PolicyFragmentInput!]!=[],\r\n    $revocationCheckPolicies:[RevocationCheckPolicyInput!]!=[],\r\n    $scheduledTasks:[ScheduledTaskInput!]!=[],\r\n    $logSinks: [LogSinkInput!]!=[],\r\n    $schemas:[SchemaInput!]!=[],\r\n    $secrets: [SecretInput!]!=[],\r\n    $httpConfigurations: [HttpConfigurationInput!]!=[],\r\n    $customKeyValues: [CustomKeyValueInput!]!=[],\r\n    $serverModuleFiles:[ServerModuleFileInput!]!=[],\r\n    $serviceResolutionConfigs:[ServiceResolutionConfigInput!]!=[],\r\n    $folders: [FolderInput!]!=[],\r\n    $smConfigs: [SMConfigInput!]!=[],\r\n    $soapServices:[SoapServiceInput!]!=[],\r\n    $trustedCerts:[TrustedCertInput!]!=[],\r\n    $webApiServices: [WebApiServiceInput!]!=[]) {\r\n    setServerModuleFiles(input: $serverModuleFiles){detailedStatus {action status description source {name value} target {name value}}}\r\n    setClusterProperties (input: $clusterProperties){detailedStatus {action status description source {name value} target {name value}}}\r\n    setServiceResolutionConfigs (input: $serviceResolutionConfigs){detailedStatus {action status description source {name value} target {name value}}}\r\n    setPasswordPolicies (input: $passwordPolicies){detailedStatus {action status description source {name value} target {name value}}}\r\n    setAdministrativeUserAccountProperties (input: $administrativeUserAccountProperties){detailedStatus {action status description source {name value} target {name value}}}\r\n\r\n    setFolders(input: $folders){detailedStatus {action status description source {name value} target {name value}}}\r\n    setRevocationCheckPolicies (input: $revocationCheckPolicies){detailedStatus {action status description source {name value} target {name value}}}\r\n    setTrustedCerts (input: $trustedCerts){detailedStatus {action status description source {name value} target {name value}}}\r\n    setSecrets (input: $secrets){detailedStatus {action status description source {name value} target {name value}}}\r\n    setHttpConfigurations(input: $httpConfigurations){detailedStatus {action status description source {name value} target {name value}}}\r\n    setCustomKeyValues(input: $customKeyValues){detailedStatus {action status description source {name value} target {name value}}}\r\n    setSchemas (input: $schemas){detailedStatus {action status description source {name value} target {name value}}}\r\n    setDtds (input: $dtds){detailedStatus {action status description source {name value} target {name value}}}\r\n    setJdbcConnections (input: $jdbcConnections){detailedStatus {action status description source {name value} target {name value}}}\r\n    setFips (input: $fips){detailedStatus {action status description source {name value} target {name value}}}\r\n    setLdaps (input: $ldaps){detailedStatus {action status description source {name value} target {name value}}}\r\n    setFipGroups (input: $fipGroups){detailedStatus {action status description source {name value} target {name value}}}\r\n    setInternalGroups (input: $internalGroups){detailedStatus {action status description source {name value} target {name value}}}\r\n    setFipUsers (input: $fipUsers){detailedStatus {action status description source {name value} target {name value}}}\r\n    setInternalUsers (input: $internalUsers){detailedStatus {action status description source {name value} target {name value}}}\r\n    setCassandraConnections (input: $cassandraConnections){detailedStatus {action status description source {name value} target {name value}}}\r\n    setJmsDestinations (input: $jmsDestinations){detailedStatus {action status description source {name value} target {name value}}}\r\n    setSMConfigs (input: $smConfigs){detailedStatus {action status description source {name value} target {name value}}}\r\n    setPolicyFragments (input: $policyFragments){detailedStatus {action status description source {name value} target {name value}}}\r\n    setEncassConfigs (input: $encassConfigs){detailedStatus {action status description source {name value} target {name value}}}\r\n    setGlobalPolicies (input: $globalPolicies){detailedStatus {action status description source {name value} target {name value}}}\r\n    setBackgroundTaskPolicies (input: $backgroundTaskPolicies){detailedStatus {action status description source {name value} target {name value}}}\r\n    setWebApiServices (input: $webApiServices){detailedStatus {action status description source {name value} target {name value}}}\r\n    setSoapServices (input: $soapServices){detailedStatus {action status description source {name value} target {name value}}}\r\n    setInternalWebApiServices (input: $internalWebApiServices){detailedStatus {action status description source {name value} target {name value}}}\r\n    setInternalSoapServices (input: $internalSoapServices){detailedStatus {action status description source {name value} target {name value}}}\r\n    setEmailListeners (input: $emailListeners){detailedStatus {action status description source {name value} target {name value}}}\r\n    setListenPorts (input: $listenPorts){detailedStatus {action status description source {name value} target {name value}}}\r\n    setActiveConnectors (input: $activeConnectors){detailedStatus {action status description source {name value} target {name value}}}\r\n    setScheduledTasks (input: $scheduledTasks){detailedStatus {action status description source {name value} target {name value}}}\r\n    setLogSinks(input: $logSinks){detailedStatus {action status description source {name value} target {name value}}}\r\n\r\n    # Keys must be mutated at the end\r\n    setKeys (input: $keys) {detailedStatus {action status description source {name value} target {name value}}}\r\n}\r\n",
+                                "variable": "gqlQuery"
+                              }
+                            },
+                            {
+                              "SetVariable": {
+                                "expression": "${graphmanBundle.mainpart}",
+                                "variable": "gqlVariable"
+                              }
+                            },
+                            {
+                              "GatewayGraphQL": {
+                                "encPass": "",
+                                "query": "${gqlQuery}",
+                                "queryOptions": "",
+                                "target": "RESPONSE",
+                                "variables": "${gqlVariable}"
+                              }
+                            },
+                            {
+                              "HardcodedResponse": {
+                                "body": "The service \"${resolvedService.name}\" with path \"${servicePath.result}\" for URI \"${servicePath}\" is now blocked.\n"
+                              }
+                            }
+                          ],
+                          ".properties": {
+                            ".right.comment": "// Update the service"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "All": [
+                    {
+                      "HardcodedResponse": {
+                        "body": "${errorMessage}",
+                        "status": "500"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "guid": "2ed3b12a-42bf-4c81-880c-795b91664f4b",
+      "name": "Salt Test",
+      "resolutionPath": "/salt/test*",
+      "serviceType": "WEB_API",
+      "checksum": "e5decad5379eee91421d860d7df986e05b0e357c",
+      "enabled": true,
+      "folderPath": "/Salt",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "HttpBasic": {},
+              ".properties": {
+                ".enabled": false
+              }
+            },
+            {
+              "Authentication": {
+                "identityProviderOid": "0000000000000000fffffffffffffffe"
+              },
+              ".properties": {
+                ".enabled": false
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "CacheLookup": {
+                        "cacheEntryKey": "${gateway.salt.cache}",
+                        "contentTypeOverride": ""
+                      }
+                    }
+                  ]
+                },
+                {
+                  "All": [
+                    {
+                      "HardcodedResponse": {
+                        "body": "Salt IP cache is empty."
+                      }
+                    }
+                  ]
+                }
+              ],
+              ".properties": {
+                ".enabled": false
+              }
+            },
+            {
+              "All": [
+                {
+                  "SetVariable": {
+                    "expression": "/salt/test/customer/9234/product/4567",
+                    "variable": "uri"
+                  }
+                },
+                {
+                  "Regex": {
+                    "autoTarget": false,
+                    "captureVar": "fd",
+                    "otherTargetMessageVariable": "uri",
+                    "regex": "\\d",
+                    "regexName": "First Digit",
+                    "replacement": "",
+                    "target": "OTHER"
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "expression": "",
+                    "variable": "subUri"
+                  }
+                },
+                {
+                  "JavaScript": {
+                    "executionTimeout": "",
+                    "name": "",
+                    "script": "var uri=context.getVariable('uri');\nvar firstDigit=context.getVariable('fd');\n\nvar substring=uri.substring(0,uri.indexOf(firstDigit)-1);\n\ncontext.setVariable('subUri',substring);"
+                  }
+                },
+                {
+                  "HardcodedResponse": {
+                    "body": "${uri}\n${subUri}\n"
+                  }
+                }
+              ],
+              ".properties": {
+                ".enabled": false
+              }
+            },
+            {
+              "All": [
+                {
+                  "FaultLevel": {
+                    "levelInfo": {
+                      ".type": "soapFaultLevel",
+                      "level": 4
+                    }
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "expression": "/salt/test/customer/9234/product/",
+                    "variable": "uri"
+                  }
+                },
+                {
+                  "ResolveService": {
+                    "uri": "${uri}"
+                  }
+                },
+                {
+                  "HardcodedResponse": {
+                    "body": "Provided URI is: ${uri}\nResolved service is: ${resolvedService.name}\nResolved service oid: ${resolvedService.oid}\n"
+                  },
+                  ".properties": {
+                    ".enabled": false
+                  }
+                }
+              ],
+              ".properties": {
+                ".enabled": false
+              }
+            },
+            {
+              "All": [
+                {
+                  "SetVariable": {
+                    "contentType": "application/json; charset=utf-8",
+                    "dataType": "message",
+                    "expression": "{\"query\":\"query webApiServicesByName ($name: String!) {\\n    webApiServices:webApiServicesByName (name: $name) {\\n        goid\\n        name\\n        resolutionPath\\n    }\\n}\",\"variables\":{\"name\":\"${resolvedService.name}\"}}",
+                    "variable": "getService"
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "contentType": "application/json; charset=utf-8",
+                    "dataType": "message",
+                    "expression": "",
+                    "variable": "graphmanResponse"
+                  },
+                  ".properties": {
+                    ".enabled": false
+                  }
+                },
+                {
+                  "AddHeader": {
+                    "headerName": "Content-Type",
+                    "headerValue": "application/json"
+                  }
+                },
+                {
+                  "HttpRouting": {
+                    "httpMethod": "POST",
+                    "login": "admin",
+                    "omitAuthHeaderConnectReuseSystemDefault": true,
+                    "password": "password",
+                    "protectedServiceUrl": "https://localhost:8443/graphman",
+                    "requestHeaderRules": {
+                      ".type": "httpPassthroughRuleSet",
+                      "forwardAll": true,
+                      "rules": [
+                        {
+                          ".type": "httpPassthroughRule",
+                          "name": "Cookie"
+                        },
+                        {
+                          ".type": "httpPassthroughRule",
+                          "name": "SOAPAction"
+                        }
+                      ]
+                    },
+                    "requestMsgSrc": "getService",
+                    "requestParamRules": {
+                      ".type": "httpPassthroughRuleSet",
+                      "forwardAll": true,
+                      "rules": []
+                    },
+                    "responseHeaderRules": {
+                      ".type": "httpPassthroughRuleSet",
+                      "forwardAll": true,
+                      "rules": [
+                        {
+                          ".type": "httpPassthroughRule",
+                          "name": "Set-Cookie"
+                        }
+                      ]
+                    },
+                    "samlAssertionVersion": 2
+                  }
+                },
+                {
+                  "EvaluateJsonPathExpressionV2": {
+                    "expression": "data.webApiServices",
+                    "target": "RESPONSE"
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "contentType": "application/json; charset=utf-8",
+                    "dataType": "message",
+                    "expression": "[${jsonPath.results}]",
+                    "variable": "webApiServices"
+                  }
+                },
+                {
+                  "JsonTransformation": {
+                    "otherTargetMessageVariable": "webApiServices",
+                    "rootTagString": "webApiServices",
+                    "target": "OTHER",
+                    "transformation": "JSON_to_XML"
+                  }
+                },
+                {
+                  "RequestXpath": {
+                    "variablePrefix": "result",
+                    "xpathExpression": {
+                      ".type": "xpathExpression",
+                      "expression": "normalize-space(/webApiServices/value[goid=('${resolvedService.oid}')]/resolutionPath/text())",
+                      "namespaces": {
+                        "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                      },
+                      "xpathVersion": "XPATH_2_0"
+                    }
+                  },
+                  ".properties": {
+                    ".enabled": false
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "expression": "normalize-space(/webApiServices/value[goid=('${resolvedService.oid}')]/resolutionPath/text())",
+                    "variable": "xPath"
+                  }
+                },
+                {
+                  "ResponseXpath": {
+                    "variablePrefix": "result",
+                    "xpathExpression": {
+                      ".type": "xpathExpression",
+                      "expression": "${xPath}",
+                      "namespaces": {
+                        "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                      },
+                      "xpathVersion": "XPATH_1_0"
+                    }
+                  }
+                },
+                {
+                  "ResponseXpath": {
+                    "variablePrefix": "result",
+                    "xpathExpression": {
+                      ".type": "xpathExpression",
+                      "expression": "normalize-space(/webApiServices/value[goid=('8dcdd6ac03c8dca84d4ba6e0e2091d0d')]/resolutionPath/text())",
+                      "namespaces": {
+                        "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                      },
+                      "xpathVersion": "XPATH_1_0"
+                    }
+                  },
+                  ".properties": {
+                    ".enabled": false
+                  }
+                },
+                {
+                  "HardcodedResponse": {
+                    "body": "${result.results}\n"
+                  }
+                },
+                {
+                  "All": [
+                    {
+                      "EvaluateJsonPathExpressionV2": {
+                        "expression": "data.webApiServices",
+                        "otherTargetMessageVariable": "graphmanResponse",
+                        "target": "OTHER"
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "contentType": "application/json; charset=utf-8",
+                        "dataType": "message",
+                        "expression": "{\r\n\"webApiServices\": [\r\n${jsonPath.result}\r\n],\r\n  \"properties\": {\r\n    \"defaultAction\": \"NEW_OR_UPDATE\"\r\n  }\r\n}",
+                        "variable": "graphmanBundle"
+                      }
+                    }
+                  ],
+                  ".properties": {
+                    ".enabled": false,
+                    ".right.comment": "// Create bundle from Graphman response"
+                  }
+                }
+              ],
+              ".properties": {
+                ".enabled": false,
+                ".right.comment": "// Get Service Bundle"
+              }
+            },
+            {
+              "All": [
+                {
+                  "SetVariable": {
+                    "expression": "query webApiServicesByName ($name: String!) {\r\n        webApiServices:webApiServicesByName (name: $name) {\r\n              goid\r\n              name\r\n              resolutionPath\r\n          }\r\n     }",
+                    "variable": "gqlQuery"
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "expression": "{\"name\":\"${resolvedService.name}\"}",
+                    "variable": "gqlVariable"
+                  }
+                },
+                {
+                  "GatewayGraphQL": {
+                    "encPass": "",
+                    "query": "${gqlQuery}",
+                    "queryOptions": "",
+                    "target": "RESPONSE",
+                    "variables": "${gqlVariable}"
+                  }
+                },
+                {
+                  "EvaluateJsonPathExpressionV2": {
+                    "expression": "data.webApiServices",
+                    "target": "RESPONSE"
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "contentType": "application/json; charset=utf-8",
+                    "dataType": "message",
+                    "expression": "[${jsonPath.results}]",
+                    "variable": "webApiServices"
+                  }
+                },
+                {
+                  "JsonTransformation": {
+                    "otherTargetMessageVariable": "webApiServices",
+                    "rootTagString": "webApiServices",
+                    "target": "OTHER",
+                    "transformation": "JSON_to_XML"
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "expression": "normalize-space(/webApiServices/value[goid=('${resolvedService.oid}')]/resolutionPath/text())",
+                    "variable": "xPath"
+                  }
+                },
+                {
+                  "ResponseXpath": {
+                    "variablePrefix": "result",
+                    "xpathExpression": {
+                      ".type": "xpathExpression",
+                      "expression": "${xPath}",
+                      "namespaces": {
+                        "s": "http://schemas.xmlsoap.org/soap/envelope/"
+                      },
+                      "xpathVersion": "XPATH_1_0"
+                    }
+                  }
+                },
+                {
+                  "HardcodedResponse": {
+                    "body": "${result.result}\n"
+                  }
+                },
+                {
+                  "All": [
+                    {
+                      "EvaluateJsonPathExpressionV2": {
+                        "expression": "data.webApiServices",
+                        "otherTargetMessageVariable": "graphmanResponse",
+                        "target": "OTHER"
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "contentType": "application/json; charset=utf-8",
+                        "dataType": "message",
+                        "expression": "{\r\n\"webApiServices\": [\r\n${jsonPath.result}\r\n],\r\n  \"properties\": {\r\n    \"defaultAction\": \"NEW_OR_UPDATE\"\r\n  }\r\n}",
+                        "variable": "graphmanBundle"
+                      }
+                    }
+                  ],
+                  ".properties": {
+                    ".enabled": false,
+                    ".right.comment": "// Create bundle from Graphman response"
+                  }
+                }
+              ],
+              ".properties": {
+                ".enabled": false,
+                ".right.comment": "// Get servicePath"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "Service URI is: ${request.http.uri}"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "54798818-a137-4a40-855f-4ef86ffa086b",
+      "name": "Gateway Graphman Bundle - 2025-01-23T18:38:00.584Z",
+      "author": "admin",
+      "hostname": "ssg.mgt.com",
+      "timestamp": "2025-01-23T18:38:00.584Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

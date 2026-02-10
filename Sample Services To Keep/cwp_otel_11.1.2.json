@@ -1,0 +1,60 @@
+{
+  "clusterProperties": [
+    {
+      "name": "otel.attributePrefix",
+      "checksum": "fcc47e7773407b8464363bf8a614ebb14f90efc1",
+      "description": "Open Telemetry Attribute Prefix.",
+      "hiddenProperty": false,
+      "value": "cob_"
+    },
+    {
+      "name": "otel.baggage.trace.attributes",
+      "checksum": "55bbcc93b32a77bada6ff4c09e84b9cd1bf7cfe6",
+      "description": "Baggage keys that create custom trace attribute that will be added globally to the server-kind span. Use * for all keys. eg. key1,key2",
+      "hiddenProperty": false,
+      "value": "bagkey1,bagkey2"
+    },
+    {
+      "name": "otel.enabled",
+      "checksum": "1005b8f7339e47abaa2c1b7031d08b33c4ce2a74",
+      "description": "Enable Open Telemetry.",
+      "hiddenProperty": false,
+      "value": "true"
+    },
+    {
+      "name": "otel.metricPrefix",
+      "checksum": "b0b45c565ef2cebd3733dba72e6ec36be30a7efe",
+      "description": "Open Telemetry metric prefix. Requires Gateway restart.",
+      "hiddenProperty": false,
+      "value": "l7_"
+    },
+    {
+      "name": "otel.serviceMetricEnabled",
+      "checksum": "5018929c80c0e460b0866f80f38461c070001a6d",
+      "description": "Enable Open Telemetry Service Metric. Requires Gateway restart.",
+      "hiddenProperty": false,
+      "value": "true"
+    },
+    {
+      "name": "otel.trace.attributes",
+      "checksum": "3a1aac05c8828913bf156b23b006acd2f58210e2",
+      "description": "Open Telemetry custom trace attributes that will be added globally to the server kind span representing the service in a trace at the end of policy processing. Supports context variable resolution. e.g. attr1=value1,attr2=${value2}",
+      "hiddenProperty": false,
+      "value": "global_trace_attr1=value1,global_trace_attr2=${service.name}"
+    },
+    {
+      "name": "otel.traceConfig",
+      "checksum": "ad5c34f125fb18931b263098887b6c94b848e42b",
+      "description": "Enable Open Telemetry Tracing Config.",
+      "hiddenProperty": false,
+      "value": "{\n  \"services\" : [ {\n    \"resolutionPath\" : \".*\"\n  } ],\n  \"assertions\" : {\n    \"exclude\" : [ \"Decode MTOM Message\" ]\n  },\n  \"contextVariables\" : {\n    \"include\" : [ \".*\" ],\n    \"exclude\" : [ \".*mypassword.*\" ]\n  }\n}"
+    },
+    {
+      "name": "otel.traceEnabled",
+      "checksum": "28b47d47a1b4e0a80b85bfb6837ce82cee111bd8",
+      "description": "Enable Open Telemetry Tracing.",
+      "hiddenProperty": false,
+      "value": "true"
+    }
+  ]
+}

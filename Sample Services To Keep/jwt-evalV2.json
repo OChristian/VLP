@@ -1,0 +1,376 @@
+{
+  "services": [
+    {
+      "guid": "1aa160ba-28ee-46ed-9ec3-770674fec933",
+      "name": "JWT from Doc",
+      "resolutionPath": "/doc/jwt",
+      "serviceType": "WEB_API",
+      "checksum": "0dab9ba34b6305f21804489dcf2223c6e27a017e",
+      "enabled": true,
+      "folderPath": "/TestApis",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "properties": [
+        {
+          "name": "latencyMetrics.settings",
+          "value": "false|INTERVAL|15000"
+        },
+        {
+          "name": "latencyMetrics.subservices",
+          "value": ""
+        },
+        {
+          "name": "latencyMetrics.captureClientAndFolder",
+          "value": "true|false"
+        }
+      ],
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "HttpBasic": {}
+            },
+            {
+              "Authentication": {
+                "identityProviderOid": "0000000000000000fffffffffffffffe"
+              }
+            },
+            {
+              "Comment": "======= EXAMPLE POLICY ======="
+            },
+            {
+              "Comment": "This is an example of a JWT encode and decode workflow"
+            },
+            {
+              "Comment": "This policy uses hard-coded values. Use context variables in a real policy."
+            },
+            {
+              "Comment": "Error handling is omitted. Use proper error handling in a real policy."
+            },
+            {
+              "Comment": "Ensure that this policy is part of a service that it is authenticating."
+            },
+            {
+              "Comment": "========================="
+            },
+            {
+              "Comment": "========================="
+            },
+            {
+              "Comment": "SOAP Fault Response as Full Detail assertion should not be used with REST based services."
+            },
+            {
+              "Comment": "Use this assertion during design time to print out more details in error cases."
+            },
+            {
+              "Comment": "========================="
+            },
+            {
+              "FaultLevel": {
+                "levelInfo": {
+                  ".type": "soapFaultLevel",
+                  "level": 4
+                }
+              }
+            },
+            {
+              "Comment": "========================="
+            },
+            {
+              "Comment": "following will create jwt and sign it"
+            },
+            {
+              "Comment": "========================="
+            },
+            {
+              "SetVariable": {
+                "dataType": "dateTime",
+                "dateOffsetExpression": "60",
+                "expression": "",
+                "variable": "exp"
+              },
+              ".properties": {
+                ".right.comment": "// creating a lifetime of 60 seconds"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "{\r\n\t\"iss\": \"https://ssg.com/example/jwt\",\r\n\t\"exp\": ${exp.seconds},\r\n\t\"message\": \"this is an example of a jwt\"\r\n}",
+                "variable": "payload"
+              },
+              ".properties": {
+                ".right.comment": "// this is a payload of the jwt"
+              }
+            },
+            {
+              "EncodeJsonWebToken": {
+                "headerAction": "Merge to Generated Header",
+                "keyAlias": "ssl",
+                "keyGoid": "00000000000000000000000000000002",
+                "signPayload": true,
+                "signatureAlgorithm": "RS256",
+                "signatureSourceType": 1,
+                "sourceHeaders": "{\"kid\":\"ssl\"}",
+                "sourceVariable": "${payload}",
+                "targetVariable": "jwt"
+              },
+              ".properties": {
+                ".right.comment": "// kid has to match the Private Key Allias that is used to sign the jwt"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "expiration date:\r\n${exp.seconds} \r\n\r\npayload: \r\n${payload}\r\n\r\njwt:\r\n${jwt.compact}",
+                "variable": "example.response"
+              }
+            },
+            {
+              "Comment": "========================="
+            },
+            {
+              "Comment": "following creates jwk set"
+            },
+            {
+              "Comment": "========================="
+            },
+            {
+              "CreateJsonWebKey": {
+                "keys": [
+                  {
+                    "keyId": "ssl",
+                    "publicKeyUse": "Signature",
+                    "sourceKeyAlias": "ssl",
+                    "sourceKeyGoid": "00000000000000000000000000000002"
+                  }
+                ],
+                "targetVariable": "jwks"
+              },
+              ".properties": {
+                ".right.comment": "// kid matches the Private Key Allias used to sign the jwt"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "${example.response}\r\n\r\njwks:\r\n${jwks}",
+                "variable": "example.response"
+              }
+            },
+            {
+              "All": [
+                {
+                  "Comment": "========================="
+                },
+                {
+                  "Comment": "Following will Extract header and payload using Decode Json Web Token Assertion with Validation Method set to \"None\""
+                },
+                {
+                  "Comment": "Then set the extracted values as actual results for alg, iss, kid, and exp (algorithm, issuer, kid, and expiry date)"
+                },
+                {
+                  "Comment": "Then set the expected results for alg and iss (algorithm and issuer)"
+                },
+                {
+                  "Comment": "And finally compare the expected results (alg, iss, exp) with the extracted results"
+                },
+                {
+                  "Comment": "========================="
+                },
+                {
+                  "DecodeJsonWebToken": {
+                    "failUnverifiedSignature": true,
+                    "sourcePayload": "${jwt.compact}",
+                    "targetVariablePrefix": "jwt.decode",
+                    "validationType": "None"
+                  },
+                  ".properties": {
+                    ".right.comment": "// Do not validate signature. Decode JSON Web Token to extract header and payload"
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "contentType": "application/json; charset=utf-8",
+                    "dataType": "message",
+                    "expression": "${jwt.decode.header}",
+                    "variable": "header"
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "contentType": "application/json; charset=utf-8",
+                    "dataType": "message",
+                    "expression": "${jwt.decode.payload}",
+                    "variable": "payload"
+                  }
+                },
+                {
+                  "EvaluateJsonPathExpressionV2": {
+                    "expression": "kid",
+                    "otherTargetMessageVariable": "header",
+                    "target": "OTHER",
+                    "variablePrefix": "jwt.kid"
+                  }
+                },
+                {
+                  "EvaluateJsonPathExpressionV2": {
+                    "expression": "alg",
+                    "otherTargetMessageVariable": "header",
+                    "target": "OTHER",
+                    "variablePrefix": "jwt.alg"
+                  }
+                },
+                {
+                  "EvaluateJsonPathExpressionV2": {
+                    "expression": "iss",
+                    "otherTargetMessageVariable": "payload",
+                    "target": "OTHER",
+                    "variablePrefix": "jwt.iss"
+                  }
+                },
+                {
+                  "EvaluateJsonPathExpressionV2": {
+                    "expression": "exp",
+                    "otherTargetMessageVariable": "payload",
+                    "target": "OTHER",
+                    "variablePrefix": "jwt.exp"
+                  }
+                },
+                {
+                  "Comment": "following sets expected values for alg and iss"
+                },
+                {
+                  "SetVariable": {
+                    "expression": "RS256",
+                    "variable": "alg.expected"
+                  }
+                },
+                {
+                  "SetVariable": {
+                    "expression": "https://ssg.com/example/jwt",
+                    "variable": "iss.expected"
+                  },
+                  ".properties": {
+                    ".right.comment": "// this is the expected issuer that must match the value in Set Context Variable payload line #17"
+                  }
+                },
+                {
+                  "Comment": "following validates against the expected values of alg, iss, and exp"
+                },
+                {
+                  "ComparisonAssertion": {
+                    "caseSensitive": false,
+                    "expression1": "${jwt.alg.result}",
+                    "expression2": "${alg.expected}",
+                    "predicates": [
+                      {
+                        ".type": ":binary",
+                        "caseSensitive": false,
+                        "rightValue": "${alg.expected}"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "ComparisonAssertion": {
+                    "caseSensitive": false,
+                    "expression1": "${jwt.iss.result}",
+                    "expression2": "${iss.expected}",
+                    "predicates": [
+                      {
+                        ".type": ":binary",
+                        "caseSensitive": false,
+                        "rightValue": "${iss.expected}"
+                      }
+                    ]
+                  },
+                  ".properties": {
+                    ".right.comment": "// default"
+                  }
+                },
+                {
+                  "ComparisonAssertion": {
+                    "caseSensitive": false,
+                    "expression1": "${jwt.exp.result}",
+                    "expression2": "${gateway.time.seconds}",
+                    "operator": "GE",
+                    "predicates": [
+                      {
+                        ".type": ":binary",
+                        "caseSensitive": false,
+                        "operator": "GE",
+                        "rightValue": "${gateway.time.seconds}"
+                      }
+                    ]
+                  },
+                  ".properties": {
+                    ".right.comment": "// check expiration"
+                  }
+                }
+              ],
+              ".properties": {
+                ".right.comment": "// Extract Key ID (kid), Signature Algorithm (alg), Expiry Date (exp), and JWT issuer (iss)"
+              }
+            },
+            {
+              "Comment": "========================="
+            },
+            {
+              "Comment": "following will validate the jwt signature"
+            },
+            {
+              "Comment": "========================="
+            },
+            {
+              "DecodeJsonWebToken": {
+                "failUnverifiedSignature": true,
+                "keyId": "${jwt.kid.result}",
+                "keyType": "JSON Web Key Set",
+                "privateKeySource": "${jwks}",
+                "sourcePayload": "${jwt.compact}",
+                "targetVariablePrefix": "jwt.validated",
+                "validationType": "Using Recipient Key From Context Variable"
+              },
+              ".properties": {
+                ".right.comment": "// kid is coming from Evaluate JSON Path Expression of kid line #35"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "${example.response}\r\n\r\njwt validated header:\r\n${jwt.validated.header}\r\n\r\njwt validated payload:\r\n${jwt.validated.payload}",
+                "variable": "example.response"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "${example.response}",
+                "contentType": "text/plain; charset=UTF-8"
+              }
+            },
+            {
+              "AuditDetail": {
+                "detail": "cob - JWT distributed",
+                "loggingOnly": true
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "f3f579c5-d298-436b-9536-f7899f238963",
+      "name": "Gateway Graphman Bundle - 2025-08-07T11:08:17.945Z",
+      "author": "admin",
+      "hostname": "localhost",
+      "timestamp": "2025-08-07T11:08:17.945Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

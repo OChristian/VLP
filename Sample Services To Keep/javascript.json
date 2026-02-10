@@ -1,0 +1,74 @@
+{
+    "services":[
+        {
+            "guid": "7575a05f-1d16-4175-a021-d0c0742596a8",
+            "name": "javascript",
+            "resolutionPath": "/js",
+            "serviceType": "WEB_API",
+            "checksum": "7b63dfe13c76c3c23af072644e64c7234f7d6c14",
+            "enabled": true,
+            "folderPath": "/TestApis",
+            "methodsAllowed": [
+              "GET",
+              "POST",
+              "PUT",
+              "DELETE"
+            ],
+            "tracingEnabled": false,
+            "wssProcessingEnabled": false,
+            "laxResolution": false,
+            "policy": {
+              "code": {
+                "All": [
+                  {
+                    "FaultLevel": {
+                      "levelInfo": {
+                        ".type": "soapFaultLevel",
+                        "level": 4
+                      }
+                    }
+                  },
+                  {
+                    "SetVariable": {
+                      "expression": "This is SomE data with Upper and LOwer casES.",
+                      "variable": "dataIn"
+                    }
+                  },
+                  {
+                    "SetVariable": {
+                      "expression": "",
+                      "variable": "upper"
+                    }
+                  },
+                  {
+                    "SetVariable": {
+                      "expression": "",
+                      "variable": "lower"
+                    }
+                  },
+                  {
+                    "SetVariable": {
+                      "expression": "",
+                      "variable": "random"
+                    }
+                  },
+                  {
+                    "JavaScript": {
+                      "executionTimeout": "",
+                      "name": "",
+                      "script": "function getRandomInt(max) {\n  return Math.floor(Math.random() * max);\n}\n\nvar data = context.getVariable('dataIn');\ncontext.setVariable('upper',data.toUpperCase());\ncontext.setVariable('lower',data.toLowerCase());\ncontext.setVariable('random',getRandomInt(10));"
+                    }
+                  },
+                  {
+                    "HardcodedResponse": {
+                      "body": "{\n\"dataIn\": \"${dataIn}\",\n\"upper\": \"${upper}\",\n\"lower\": \"${lower}\",\n\"random\":\"${random}\"\n}",
+                      "contentType": "application/json; charset=UTF-8"
+                    }
+                  }
+                ]
+              }
+            }
+        }
+    ]
+}
+      

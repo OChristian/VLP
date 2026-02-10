@@ -1,0 +1,198 @@
+{
+  "services": [
+    {
+      "guid": "e4db2d3a-ed86-45a4-bcaa-27372def1d09",
+      "name": "circuit",
+      "resolutionPath": "/circuit*",
+      "serviceType": "WEB_API",
+      "checksum": "6afd38c00c986ed59a3159e29ee08980f2a0799f",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Comment": "If the name parameter is not Christian for 5 times"
+            },
+            {
+              "Comment": "then lines 4-6 (before the assertion that fails) are not executed (you can see no traces in the logs)"
+            },
+            {
+              "Comment": "You can also observe the failure on Otel"
+            },
+            {
+              "Comment": "You can also \"play\" by configuring the new routing assertion and fail on routing with a response code"
+            },
+            {
+              "SetVariable": {
+                "expression": "${request.url.path}",
+                "variable": "urlPath"
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "ComparisonAssertion": {
+                        "expression1": "${urlPath}",
+                        "expression2": "/circuit/param",
+                        "predicates": [
+                          {
+                            ".type": ":binary",
+                            "rightValue": "/circuit/param"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "CircuitBreaker": [
+                        {
+                          "AuditDetail": {
+                            "detail": "Execute lines 1",
+                            "loggingOnly": true
+                          }
+                        },
+                        {
+                          "AuditDetail": {
+                            "detail": "Execute lines 2",
+                            "loggingOnly": true
+                          }
+                        },
+                        {
+                          "AuditDetail": {
+                            "detail": "Execute lines 3",
+                            "loggingOnly": true
+                          }
+                        },
+                        {
+                          "ComparisonAssertion": {
+                            "expression1": "${request.http.parameters.name}",
+                            "expression2": "Christian",
+                            "predicates": [
+                              {
+                                ".type": ":binary",
+                                "rightValue": "Christian"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      ".properties": {
+                        "latencyCircuitTrackerId": "",
+                        "policyFailureCircuitTrackerId": ""
+                      }
+                    }
+                  ]
+                },
+                {
+                  "All": [
+                    {
+                      "ComparisonAssertion": {
+                        "expression1": "${urlPath}",
+                        "expression2": "/circuit/route",
+                        "predicates": [
+                          {
+                            ".type": ":binary",
+                            "rightValue": "/circuit/route"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "CircuitBreaker": [
+                        {
+                          "AuditDetail": {
+                            "detail": "Execute lines 1",
+                            "loggingOnly": true
+                          }
+                        },
+                        {
+                          "AuditDetail": {
+                            "detail": "Execute lines 2",
+                            "loggingOnly": true
+                          }
+                        },
+                        {
+                          "AuditDetail": {
+                            "detail": "Execute lines 3",
+                            "loggingOnly": true
+                          }
+                        },
+                        {
+                          "HttpRouting": {
+                            "omitAuthHeaderConnectReuseSystemDefault": true,
+                            "protectedServiceUrl": "https://localhost:8443/code?code=${request.http.parameters.code}",
+                            "requestHeaderRules": {
+                              ".type": "httpPassthroughRuleSet",
+                              "forwardAll": true,
+                              "rules": [
+                                {
+                                  ".type": "httpPassthroughRule",
+                                  "name": "Cookie"
+                                },
+                                {
+                                  ".type": "httpPassthroughRule",
+                                  "name": "SOAPAction"
+                                }
+                              ]
+                            },
+                            "requestParamRules": {
+                              ".type": "httpPassthroughRuleSet",
+                              "forwardAll": true,
+                              "rules": []
+                            },
+                            "responseHeaderRules": {
+                              ".type": "httpPassthroughRuleSet",
+                              "forwardAll": true,
+                              "rules": [
+                                {
+                                  ".type": "httpPassthroughRule",
+                                  "name": "Set-Cookie"
+                                }
+                              ]
+                            },
+                            "samlAssertionVersion": 2
+                          }
+                        }
+                      ],
+                      ".properties": {
+                        "latencyCircuitTrackerId": "",
+                        "policyFailureCircuitTrackerId": ""
+                      }
+                    },
+                    {
+                      "True": {},
+                      ".properties": {
+                        ".enabled": false
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "e65dec68-fb82-4697-8040-abe282d9be7d",
+      "name": "Gateway Graphman Bundle - 2025-01-23T17:38:10.726Z",
+      "author": "admin",
+      "hostname": "ssg.mgt.com",
+      "timestamp": "2025-01-23T17:38:10.726Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

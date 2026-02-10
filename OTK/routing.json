@@ -1,0 +1,326 @@
+{
+  "services": [
+    {
+      "guid": "fff58149-62b9-4238-81fc-7e9a4fe92aed",
+      "name": "test",
+      "resolutionPath": "/test",
+      "serviceType": "WEB_API",
+      "checksum": "12df56753454b4d8ceaf124e73b7108d1bc93698",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "HttpRouting": {
+                "protectedServiceUrl": "https://ssg.otk.svc.cluster.local:8443/helloworld",
+                "requestHeaderRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "Cookie"
+                    },
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "SOAPAction"
+                    }
+                  ]
+                },
+                "requestParamRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": []
+                },
+                "responseHeaderRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "Set-Cookie"
+                    }
+                  ]
+                }
+              },
+              ".properties": {
+                ".enabled": false
+              }
+            },
+            {
+              "HttpRouting": {
+                "omitAuthHeaderConnectReuseSystemDefault": true,
+                "protectedServiceUrl": "https://otk.brcmlabs.com/helloworld",
+                "proxyPassword": null,
+                "proxyUsername": null,
+                "requestHeaderRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "Cookie"
+                    },
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "SOAPAction"
+                    }
+                  ]
+                },
+                "requestParamRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": []
+                },
+                "responseHeaderRules": {
+                  ".type": "httpPassthroughRuleSet",
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      ".type": "httpPassthroughRule",
+                      "name": "Set-Cookie"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "policyRevisions": [
+        {
+          "goid": "2d68f64a47b7ced36b881eeab42071ea",
+          "ordinal": 1,
+          "active": false,
+          "author": "admin",
+          "time": "2026-02-09T23:04:28.488Z",
+          "code": {
+            "All": [
+              {
+                "HttpRouting": {
+                  "protectedServiceUrl": "https://ssg.otk.svc.cluster.local:8443/helloworld",
+                  "requestHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Cookie"
+                      },
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "SOAPAction"
+                      }
+                    ]
+                  },
+                  "requestParamRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": []
+                  },
+                  "responseHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Set-Cookie"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "goid": "2d68f64a47b7ced36b881eeab4207260",
+          "ordinal": 2,
+          "active": false,
+          "author": "admin",
+          "time": "2026-02-09T23:15:28.977Z",
+          "code": {
+            "All": [
+              {
+                "HttpRouting": {
+                  "protectedServiceUrl": "https://ssg.otk.svc.cluster.local:8443/helloworld",
+                  "requestHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Cookie"
+                      },
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "SOAPAction"
+                      }
+                    ]
+                  },
+                  "requestParamRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": []
+                  },
+                  "responseHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Set-Cookie"
+                      }
+                    ]
+                  }
+                },
+                ".properties": {
+                  ".enabled": false
+                }
+              },
+              {
+                "HttpRouting": {
+                  "protectedServiceUrl": "https://ssg.otk.svc.cluster.local:8443/helloworld",
+                  "requestHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Cookie"
+                      },
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "SOAPAction"
+                      }
+                    ]
+                  },
+                  "requestParamRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": []
+                  },
+                  "responseHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Set-Cookie"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "goid": "2d68f64a47b7ced36b881eeab4207261",
+          "ordinal": 3,
+          "active": true,
+          "author": "admin",
+          "time": "2026-02-09T23:15:46.452Z",
+          "code": {
+            "All": [
+              {
+                "HttpRouting": {
+                  "protectedServiceUrl": "https://ssg.otk.svc.cluster.local:8443/helloworld",
+                  "requestHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Cookie"
+                      },
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "SOAPAction"
+                      }
+                    ]
+                  },
+                  "requestParamRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": []
+                  },
+                  "responseHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Set-Cookie"
+                      }
+                    ]
+                  }
+                },
+                ".properties": {
+                  ".enabled": false
+                }
+              },
+              {
+                "HttpRouting": {
+                  "omitAuthHeaderConnectReuseSystemDefault": true,
+                  "protectedServiceUrl": "https://otk.brcmlabs.com/helloworld",
+                  "proxyPassword": null,
+                  "proxyUsername": null,
+                  "requestHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Cookie"
+                      },
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "SOAPAction"
+                      }
+                    ]
+                  },
+                  "requestParamRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": []
+                  },
+                  "responseHeaderRules": {
+                    ".type": "httpPassthroughRuleSet",
+                    "forwardAll": true,
+                    "rules": [
+                      {
+                        ".type": "httpPassthroughRule",
+                        "name": "Set-Cookie"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "338eaefd-2062-4316-9089-197216159213",
+      "name": "Gateway Graphman Bundle - 2026-02-09T23:22:04.452Z",
+      "author": "admin",
+      "hostname": "ssg.mgt.com",
+      "timestamp": "2026-02-09T23:22:04.452Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

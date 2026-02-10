@@ -1,0 +1,44 @@
+{
+  "services": [
+    {
+      "guid": "1136de11-2d1d-43d0-b5fc-b23244c82ac9",
+      "name": "Code",
+      "resolutionPath": "/code",
+      "serviceType": "WEB_API",
+      "checksum": "5e63285953175b68a2b28c5b38e0ce3edc28dd55",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "HardcodedResponse": {
+                "body": "Response code is: ${request.http.parameters.code}",
+                "status": "${request.http.parameters.code}"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "ea005f83-f453-4bf5-80e7-6d3bb940b185",
+      "name": "Gateway Graphman Bundle - 2025-01-23T17:34:51.524Z",
+      "author": "admin",
+      "hostname": "ssg.mgt.com",
+      "timestamp": "2025-01-23T17:34:51.524Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "internalIdps": [
+    {
+      "name": "Internal Identity Provider",
+      "checksum": "909dcb79418e5aaca75df96cc0ec2b2cbc3bdef4",
+      "certValidation": "USE_DEFAULT"
+    }
+  ],
+  "services": [
+    {
+      "guid": "61f48c92-829c-4d50-84dc-9e9f3d7cf961",
+      "name": "Telemetry Cob",
+      "resolutionPath": "/telemetry",
+      "serviceType": "WEB_API",
+      "checksum": "06a984714b7041e3c5006c4d82aa9b0616d2a28a",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "Ssl": {}
+            },
+            {
+              "HttpBasic": {}
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "Authentication": {
+                        "identityProviderOid": "0000000000000000fffffffffffffffe"
+                      }
+                    },
+                    {
+                      "IdentityAttributes": {
+                        "identityProviderOid": "0000000000000000fffffffffffffffe",
+                        "lookupAttributes": [
+                          {
+                            ".type": ":internalAttributeMapping",
+                            "attributeConfig": {
+                              ".type": ":attributeConfig",
+                              "header": {
+                                ".type": "attributeHeader",
+                                "name": "First Name",
+                                "type": "string",
+                                "usersOrGroups": "USERS",
+                                "variableName": "firstName"
+                              },
+                              "variableName": "firstName"
+                            },
+                            "providerOid": "0000000000000000fffffffffffffffe"
+                          },
+                          {
+                            ".type": ":internalAttributeMapping",
+                            "attributeConfig": {
+                              ".type": ":attributeConfig",
+                              "header": {
+                                ".type": "attributeHeader",
+                                "name": "User Login",
+                                "type": "string",
+                                "usersOrGroups": "USERS",
+                                "variableName": "login"
+                              },
+                              "variableName": "login"
+                            },
+                            "providerOid": "0000000000000000fffffffffffffffe"
+                          },
+                          {
+                            ".type": ":internalAttributeMapping",
+                            "attributeConfig": {
+                              ".type": ":attributeConfig",
+                              "header": {
+                                ".type": "attributeHeader",
+                                "name": "Last Name",
+                                "type": "string",
+                                "usersOrGroups": "USERS",
+                                "variableName": "lastName"
+                              },
+                              "variableName": "lastName"
+                            },
+                            "providerOid": "0000000000000000fffffffffffffffe"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "OtelMeter": {
+                        "attributes": {
+                          "login": "${authenticatedUser.login}"
+                        },
+                        "description": "",
+                        "name": "auth_success",
+                        "type": "COUNTER"
+                      }
+                    },
+                    {
+                      "HardcodedResponse": {
+                        "body": "User authenticated:\nlogin: ${authenticatedUser.login}\nfirstName: ${authenticatedUser.firstName}\nlastName: ${authenticatedUser.lastName}"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "All": [
+                    {
+                      "OtelMeter": {
+                        "description": "",
+                        "name": "auth_fail",
+                        "type": "COUNTER"
+                      }
+                    },
+                    {
+                      "HardcodedResponse": {
+                        "body": "Authentication failed"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "43494ebb-6c9c-4f08-8ef3-0575176afe9d",
+      "name": "Gateway Graphman Bundle - 2025-01-23T18:33:00.220Z",
+      "author": "admin",
+      "hostname": "ssg.mgt.com",
+      "timestamp": "2025-01-23T18:33:00.220Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

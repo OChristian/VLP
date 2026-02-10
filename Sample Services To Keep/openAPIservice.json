@@ -1,0 +1,257 @@
+{
+  "services": [
+    {
+      "guid": "49a73473-09a0-4c86-980f-7c6db353a4ab",
+      "name": "OpenAPI Petstore",
+      "resolutionPath": "/v3/*",
+      "serviceType": "WEB_API",
+      "checksum": "676c4cbc7adb0c92a0ee87776e0eead82c6ec4ed",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": true,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "FaultLevel": {
+                "levelInfo": {
+                  ".type": "soapFaultLevel",
+                  "level": 4
+                }
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "/v3",
+                "variable": "openapi.server"
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "http://petstore:8080/openapi.json",
+                "variable": "openapi.docUrl"
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "CacheLookup": {
+                    "cacheEntryKey": "${openapi.docUrl}",
+                    "cacheId": "openApiCache",
+                    "contentTypeOverride": "",
+                    "maxEntryAgeSeconds": "30",
+                    "otherTargetMessageVariable": "openApiDoc",
+                    "target": "OTHER"
+                  }
+                },
+                {
+                  "All": [
+                    {
+                      "AuditDetail": {
+                        "detail": "Obtaining OpenAPI document from: ${openapi.docUrl}"
+                      }
+                    },
+                    {
+                      "HttpRouting": {
+                        "followRedirects": true,
+                        "httpMethod": "GET",
+                        "protectedServiceUrl": "${openapi.docUrl}",
+                        "requestHeaderRules": {
+                          ".type": "httpPassthroughRuleSet",
+                          "rules": []
+                        },
+                        "requestParamRules": {
+                          ".type": "httpPassthroughRuleSet",
+                          "rules": []
+                        },
+                        "responseHeaderRules": {
+                          ".type": "httpPassthroughRuleSet",
+                          "rules": []
+                        },
+                        "responseMsgDest": "openApiDoc"
+                      }
+                    },
+                    {
+                      "CacheStorage": {
+                        "cacheEntryKey": "${openapi.docUrl}",
+                        "cacheId": "openApiCache",
+                        "maxEntries": "1",
+                        "maxEntryAgeSeconds": "60",
+                        "maxEntrySizeBytes": "1000000",
+                        "otherTargetMessageVariable": "openApiDoc",
+                        "target": "OTHER"
+                      }
+                    }
+                  ],
+                  ".properties": {
+                    ".right.comment": "// Download and cache OpenAPI document."
+                  }
+                }
+              ],
+              ".properties": {
+                ".right.comment": "// Retrieve OpenAPI document from cache, or download it"
+              }
+            },
+            {
+              "OneOrMore": [
+                {
+                  "All": [
+                    {
+                      "Regex": {
+                        "autoTarget": false,
+                        "caseInsensitive": true,
+                        "includeEntireExpressionCapture": false,
+                        "otherTargetMessageVariable": "request.http.uri",
+                        "regex": "^.*/openapi.json$",
+                        "regexName": "OpenAPI Document Request",
+                        "replacement": "",
+                        "target": "OTHER"
+                      }
+                    },
+                    {
+                      "ComparisonAssertion": {
+                        "caseSensitive": false,
+                        "expression1": "${request.http.method}",
+                        "expression2": "GET",
+                        "predicates": [
+                          {
+                            ".type": ":binary",
+                            "caseSensitive": false,
+                            "rightValue": "GET"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "HardcodedResponse": {
+                        "body": "${openApiDoc}",
+                        "contentType": "application/json"
+                      }
+                    }
+                  ],
+                  ".properties": {
+                    ".right.comment": "// Return the OpenAPI document if it was requested"
+                  }
+                },
+                {
+                  "All": [
+                    {
+                      "OpenApi": {
+                        "openApiDoc": "openApiDoc",
+                        "requireSecurityCredentials": false
+                      }
+                    },
+                    {
+                      "SetVariable": {
+                        "expression": "${openapi.server}${openapi.expandedPath}${request.url.query}",
+                        "variable": "RoutingTo"
+                      }
+                    },
+                    {
+                      "HttpRouting": {
+                        "omitAuthHeaderConnectReuseSystemDefault": true,
+                        "protectedServiceUrl": "${openapi.server}${openapi.expandedPath}${request.url.query}",
+                        "requestHeaderRules": {
+                          ".type": "httpPassthroughRuleSet",
+                          "forwardAll": true,
+                          "rules": [
+                            {
+                              ".type": "httpPassthroughRule",
+                              "name": "Cookie"
+                            },
+                            {
+                              ".type": "httpPassthroughRule",
+                              "name": "SOAPAction"
+                            }
+                          ]
+                        },
+                        "requestParamRules": {
+                          ".type": "httpPassthroughRuleSet",
+                          "forwardAll": true,
+                          "rules": []
+                        },
+                        "responseHeaderRules": {
+                          ".type": "httpPassthroughRuleSet",
+                          "forwardAll": true,
+                          "rules": [
+                            {
+                              ".type": "httpPassthroughRule",
+                              "name": "Set-Cookie"
+                            }
+                          ]
+                        }
+                      },
+                      ".properties": {
+                        ".enabled": false,
+                        ".right.comment": "// BUG? FQDN not specified ???"
+                      }
+                    },
+                    {
+                      "HttpRouting": {
+                        "omitAuthHeaderConnectReuseSystemDefault": true,
+                        "protectedServiceUrl": "http://petstore:8080${openapi.server}${openapi.expandedPath}${request.url.query}",
+                        "requestHeaderRules": {
+                          ".type": "httpPassthroughRuleSet",
+                          "forwardAll": true,
+                          "rules": [
+                            {
+                              ".type": "httpPassthroughRule",
+                              "name": "Cookie"
+                            },
+                            {
+                              ".type": "httpPassthroughRule",
+                              "name": "SOAPAction"
+                            }
+                          ]
+                        },
+                        "requestParamRules": {
+                          ".type": "httpPassthroughRuleSet",
+                          "forwardAll": true,
+                          "rules": []
+                        },
+                        "responseHeaderRules": {
+                          ".type": "httpPassthroughRuleSet",
+                          "forwardAll": true,
+                          "rules": [
+                            {
+                              ".type": "httpPassthroughRule",
+                              "name": "Set-Cookie"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  ".properties": {
+                    ".right.comment": "// Validate request against OpenAPI document and route to service"
+                  }
+                }
+              ],
+              ".properties": {
+                ".right.comment": "// Validate and route the request, or return the OpenAPI document"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "6c48a479-6d9b-43b0-96aa-ae7c25a6b9d1",
+      "name": "Gateway Graphman Bundle - 2025-01-30T09:32:50.816Z",
+      "author": "admin",
+      "hostname": "localhost",
+      "timestamp": "2025-01-30T09:32:50.816Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "services": [
+    {
+      "goid": "d35af31f402f3ea09ae4759a46d5c914",
+      "guid": "afa2526c-4fba-4369-b06b-818dafd7eb59",
+      "name": "Redis KV",
+      "resolutionPath": "/kv*",
+      "serviceType": "WEB_API",
+      "checksum": "6b3e638eed974139ee52211c2e57d8617f8cf389",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:FaultLevel>\n            <L7p:LevelInfo soapFaultLevel=\"included\">\n                <L7p:Level intValue=\"4\"/>\n            </L7p:LevelInfo>\n        </L7p:FaultLevel>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtyZXF1ZXN0Lmh0dHAucGFyYW1ldGVycy52YWx1ZX0=\"/>\n            <L7p:VariableToSet stringValue=\"valueToStore\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtyZXF1ZXN0LnVybC5wYXRofQ==\"/>\n            <L7p:VariableToSet stringValue=\"urlPath\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"PGNvZGVzPg0KCTxjb2RlIGlkPSIwIj5TdWNjZXNzPC9jb2RlPg0KCTxjb2RlIGlkPSIxIj5JbnZhbGlkIFN0b3JlIElEPC9jb2RlPg0KCTxjb2RlIGlkPSIyIj5NYXggRW50cmllcyBFeGNlZWRlZDwvY29kZT4NCgk8Y29kZSBpZD0iMyI+TWF4IEVudHJ5IFNpemUgRXhjZWVkZWQ8L2NvZGU+DQoJPGNvZGUgaWQ9IjQiPlVucmVnaXN0ZXJlZCBwcm92aWRlciBbbm90IHByb3Blcmx5IGNvbmZpZ3VyZWQ7IG5vdCBhdmFpbGFibGVdPC9jb2RlPg0KCTxjb2RlIGlkPSI1Ij5JbnZhbGlkIGtleTwvY29kZT4NCgk8Y29kZSBpZD0iNiI+SW52YWxpZCBtYXggYWdlIHZhbHVlPC9jb2RlPg0KCTxjb2RlIGlkPSI3Ij5HZW5lcmFsIGVycm9yIChjYXRjaCBhbGwpPC9jb2RlPg0KPC9jb2Rlcz4NCg0K\"/>\n            <L7p:ContentType stringValue=\"text/xml; charset=utf-8\"/>\n            <L7p:DataType variableDataType=\"message\"/>\n            <L7p:VariableToSet stringValue=\"storageCodes\"/>\n        </L7p:SetVariable>\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:ComparisonAssertion>\n                    <L7p:Expression1 stringValue=\"${urlPath}\"/>\n                    <L7p:Expression2 stringValue=\"/kv/store\"/>\n                    <L7p:Predicates predicates=\"included\">\n                        <L7p:item binary=\"included\">\n                            <L7p:RightValue stringValue=\"/kv/store\"/>\n                        </L7p:item>\n                    </L7p:Predicates>\n                </L7p:ComparisonAssertion>\n                <L7p:AuditDetailAssertion>\n                    <L7p:Detail stringValue=\"Path is ${urlPath} - storing the value &quot;${valueToStore}&quot; in KV.\"/>\n                    <L7p:LoggingOnly booleanValue=\"true\"/>\n                </L7p:AuditDetailAssertion>\n                <L7p:KeyValueStorage>\n                    <L7p:ContinueOnError booleanValue=\"false\"/>\n                    <L7p:Key stringValue=\"cob\"/>\n                    <L7p:MaxAge stringValue=\"10m\"/>\n                    <L7p:OtherTargetMessageVariable stringValue=\"valueToStore\"/>\n                    <L7p:StoreId stringValue=\"redis\"/>\n                    <L7p:Target target=\"OTHER\"/>\n                </L7p:KeyValueStorage>\n                <L7p:AuditDetailAssertion>\n                    <L7p:Detail stringValue=\"Value &quot;${valueToStore}&quot; stored in KV.\"/>\n                    <L7p:LoggingOnly booleanValue=\"true\"/>\n                </L7p:AuditDetailAssertion>\n                <L7p:SetVariable>\n                    <L7p:Base64Expression stringValue=\"L2NvZGVzL2NvZGVbQGlkPSR7a3ZzdG9yYWdlLmFzc2VydGlvbi5zdGF0dXN9XS90ZXh0KCk=\"/>\n                    <L7p:VariableToSet stringValue=\"xPath\"/>\n                </L7p:SetVariable>\n                <L7p:ResponseXpathAssertion>\n                    <L7p:VariablePrefix stringValue=\"kvResponse\"/>\n                    <L7p:XmlMsgSrc stringValue=\"storageCodes\"/>\n                    <L7p:XpathExpression xpathExpressionValue=\"included\">\n                        <L7p:Expression stringValue=\"${xPath}\"/>\n                        <L7p:Namespaces mapValue=\"included\">\n                            <L7p:entry>\n                                <L7p:key stringValue=\"s\"/>\n                                <L7p:value stringValue=\"http://schemas.xmlsoap.org/soap/envelope/\"/>\n                            </L7p:entry>\n                        </L7p:Namespaces>\n                        <L7p:XpathVersion xpathVersion=\"XPATH_1_0\"/>\n                    </L7p:XpathExpression>\n                </L7p:ResponseXpathAssertion>\n                <L7p:HardcodedResponse>\n                    <L7p:Base64ResponseBody stringValue=\"U3RvcmFnZSBzdGF0dXM6ICR7a3ZzdG9yYWdlLmFzc2VydGlvbi5zdGF0dXN9IC0gJHtrdlJlc3BvbnNlLnJlc3VsdH0KCg==\"/>\n                </L7p:HardcodedResponse>\n            </wsp:All>\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:ComparisonAssertion>\n                    <L7p:Expression1 stringValue=\"${urlPath}\"/>\n                    <L7p:Expression2 stringValue=\"/kv/read\"/>\n                    <L7p:Predicates predicates=\"included\">\n                        <L7p:item binary=\"included\">\n                            <L7p:RightValue stringValue=\"/kv/read\"/>\n                        </L7p:item>\n                    </L7p:Predicates>\n                </L7p:ComparisonAssertion>\n                <L7p:AuditDetailAssertion>\n                    <L7p:Detail stringValue=\"Path is ${urlPath} - reading the value from KV.\"/>\n                    <L7p:LoggingOnly booleanValue=\"true\"/>\n                </L7p:AuditDetailAssertion>\n                <L7p:KeyValueLookup>\n                    <L7p:Key stringValue=\"cob\"/>\n                    <L7p:StoreId stringValue=\"redis\"/>\n                </L7p:KeyValueLookup>\n            </wsp:All>\n        </wsp:OneOrMore>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "c5893292-f133-4b08-9ab6-f7117f8a7d4a",
+      "name": "Gateway Graphman Bundle - 2024-09-19T10:31:44.374Z",
+      "author": "admin",
+      "hostname": "localhost",
+      "timestamp": "2024-09-19T10:31:44.374Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "services": [
+    {
+      "guid": "2732ac66-7d6e-43ef-a7ad-49edbf0f2baf",
+      "name": "Hello World",
+      "resolutionPath": "/helloworld",
+      "serviceType": "WEB_API",
+      "checksum": "3d519b92f5f9ff678a3456642e1ab2fbd5f3aad1",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "HardcodedResponse": {
+                "body": "Hello World!\nHello ${gateway.x-name}\n\n",
+                "contentType": "text/plain; charset=UTF-8"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "2dc1060f-924f-47e9-a776-a4b2a026c139",
+      "name": "Gateway Graphman Bundle - 2025-01-23T17:46:29.479Z",
+      "author": "admin",
+      "hostname": "ssg.mgt.com",
+      "timestamp": "2025-01-23T17:46:29.479Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

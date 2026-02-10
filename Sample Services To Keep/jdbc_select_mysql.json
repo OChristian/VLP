@@ -1,0 +1,72 @@
+{
+  "services": [
+    {
+      "guid": "4e1b2cf2-7d03-42eb-80a0-10a55893bba5",
+      "name": "MySQL",
+      "resolutionPath": "/mysql",
+      "serviceType": "WEB_API",
+      "checksum": "1bbe878bebe001d233c758f56acaf23ec3218e51",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "JdbcQuery": {
+                "connectionName": "Mysql",
+                "convertVariablesToStrings": false,
+                "namingMap": {
+                  "current_version": "otkVersion"
+                },
+                "sqlQuery": "select current_version from otk_version;"
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "${jdbcQuery.otkVersion}"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "jdbcConnections": [
+    {
+      "name": "Mysql",
+      "checksum": "888a5bc8e4de4454a32acc035309c0c48369f871",
+      "enabled": true,
+      "driverClass": "com.mysql.jdbc.Driver",
+      "jdbcUrl": "jdbc:mysql://192.168.1.161:3307/otk_db",
+      "username": "root",
+      "password": "JEw3RXYwMyTEZXSZ1nsGU0bEFCnxdqaY4qSokTLkaUCHdlufCiM/ng==",
+      "minPoolSize": 3,
+      "maxPoolSize": 15,
+      "properties": [
+        {
+          "name": "EnableCancelTimeout",
+          "value": "true"
+        }
+      ]
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "13622ab8-cb60-4430-a846-2b5a7ecf739b",
+      "name": "Gateway Graphman Bundle - 2025-01-23T15:44:11.239Z",
+      "author": "admin",
+      "hostname": "localhost",
+      "timestamp": "2025-01-23T15:44:11.239Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

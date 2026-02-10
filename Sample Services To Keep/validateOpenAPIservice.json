@@ -1,0 +1,64 @@
+{
+  "services": [
+    {
+      "guid": "f63df05b-de44-49f8-a9b2-7342fdbf0ed1",
+      "name": "Open API",
+      "resolutionPath": "/v3/*",
+      "serviceType": "WEB_API",
+      "checksum": "9d689dcfafc0c8501ab78b35dd7b6999daed507d",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "FaultLevel": {
+                "levelInfo": {
+                  ".type": "soapFaultLevel",
+                  "level": 4
+                }
+              }
+            },
+            {
+              "SetVariable": {
+                "expression": "http://petstore:8080/openapi.json",
+                "variable": "petstore"
+              }
+            },
+            {
+              "OpenApi": {
+                "openApiDoc": "petstore",
+                "requireSecurityCredentials": false,
+                "useOpenApiDocAsUrl": true
+              }
+            },
+            {
+              "HardcodedResponse": {
+                "body": "Request is valid"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "e5e050a4-6594-46c3-a6ee-24323431fb3a",
+      "name": "Gateway Graphman Bundle - 2025-01-30T09:30:33.793Z",
+      "author": "admin",
+      "hostname": "localhost",
+      "timestamp": "2025-01-30T09:30:33.793Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}
