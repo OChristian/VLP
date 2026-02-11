@@ -1,0 +1,67 @@
+{
+  "services": [
+    {
+      "goid": "4c3af4ecb375595778ceca2f0c8dcbcf",
+      "guid": "99004dee-b3ec-46c4-a6c5-388add5e5e5f",
+      "name": "ToOTK",
+      "resolutionPath": "/tootk",
+      "serviceType": "WEB_API",
+      "checksum": "0e181dfc62e8b9505e826a631d28e7b307f7fade",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "code": {
+          "All": [
+            {
+              "HttpRouting": {
+                "protectedServiceUrl": "https://otk.brcmlabs.com/helloworld",
+                "requestHeaderRules": {
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      "name": "Cookie"
+                    },
+                    {
+                      "name": "SOAPAction"
+                    }
+                  ]
+                },
+                "requestParamRules": {
+                  "forwardAll": true,
+                  "rules": []
+                },
+                "responseHeaderRules": {
+                  "forwardAll": true,
+                  "rules": [
+                    {
+                      "name": "Set-Cookie"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "6b66a17b-17c7-4624-ac4f-55d091f71c33",
+      "name": "Gateway Graphman Bundle - 2026-02-10T16:40:51.508Z",
+      "author": "admin",
+      "hostname": "ssg.mgt.com",
+      "timestamp": "2026-02-10T16:40:51.508Z"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}
