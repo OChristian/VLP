@@ -1,0 +1,31 @@
+Vérifications
+
+00/ Check the Kubernetes Dashboard
+    Run "db" (an alias has been created: alias db="microk8s dashboard-proxy") and follow instructionss
+
+0/ Prerequisites
+    a/ See aliases (k=microk8s kubectl; g=graphman; graph=...)
+    b/ Get the IP address: $ip address | grep "inet 10." and updated the two lines in /etc/hosts (sudo nano /etc/hosts)
+        10.1.143.192 grafana.brcmlabs.com gateway.brcmlabs.com ssg.mgt.com 
+        10.1.143.192 otk-pm.brcmlabs.com otk.brcmlabs.com
+1/ Main SSG Gateway is running: k get pods 
+    ssg-79fbc7cdb5-4j82n     2/2     Running 
+2/ Can connect through PM2 (Firefox / PM2/SSG) = admin/7layer
+3/ Can call Test services (test1: OK / test3: routing failure)
+        curl -kv https://gateway.brcmlabs.com/test1 
+4/ Can use graphman (used to load Policy Samples into the gateway -> see "Sample Services" folder):
+    Prerequisite: execute "graph" (it is an alias) to set GRAPHMAN+HOME: $graph
+    Then:
+        g export --using all:summary
+5/ Connect to the Grafana stack (Firefox: Grafana)
+        Dashboard / Layer7 Dashboard
+        If there are exclamation marks, Mimir datasource needs to be changes (see above Mimir)
+6/ OTK Gateway is running: k get pods -n otk
+        If it is not, go to the OTK folder and run the following make commands:
+            1/ make install -> installs the Layer7 Operator
+            2/ make set -> installs the license, certs, etc.
+            3/ make mysql 
+            3/ make ssg -> installs the gateway 
+8/ Open the browser, go to the OAuth Test client and get an access token
+    If none is returned, open the Policy Manager and check that the cert for brcmlabs.com is loaded
+    (if not, load it)
