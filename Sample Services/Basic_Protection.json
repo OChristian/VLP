@@ -1,0 +1,70 @@
+{
+  "services": [
+    {
+      "goid": "e7a8b1b94c82082aa8f1cb6659f83221",
+      "guid": "7d780106-d005-4de8-ace1-06189d15682b",
+      "name": "Basic Protection",
+      "resolutionPath": "/basic/protection",
+      "serviceType": "WEB_API",
+      "checksum": "122d0a5149950c0f3eb11a7af50df29b47456dbe",
+      "enabled": true,
+      "folderPath": "/VLP",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:Include>\n            <L7p:PolicyGuid stringValue=\"4f735cb7-7472-49a2-b9a4-519bcce26c7a\"/>\n            <L7p:PolicyName stringValue=\"Standard Security\"/>\n        </L7p:Include>\n        <L7p:Include>\n            <L7p:PolicyGuid stringValue=\"15e15010-6603-44d9-81d1-b76f3de756db\"/>\n            <L7p:PolicyName stringValue=\"Authentication\"/>\n        </L7p:Include>\n        <L7p:HardcodedResponse>\n            <L7p:Base64ResponseBody stringValue=\"SGVsbG8gV29ybGQh\"/>\n            <L7p:ResponseContentType stringValue=\"text/plain; charset=UTF-8\"/>\n        </L7p:HardcodedResponse>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ],
+  "internalIdps": [
+    {
+      "goid": "0000000000000000fffffffffffffffe",
+      "name": "Internal Identity Provider",
+      "checksum": "cdcc49ca201ff6bf8160e1281aa07c79d0a60099",
+      "certValidation": "USE_DEFAULT"
+    }
+  ],
+  "policies": [
+    {
+      "goid": "1bb51e7089ae3706e749efbbf79fd1a0",
+      "guid": "15e15010-6603-44d9-81d1-b76f3de756db",
+      "name": "Authentication",
+      "policyType": "FRAGMENT",
+      "checksum": "cc5e7b79b9b1c19862119e23905dca1ce06031e1",
+      "folderPath": "/VLP/Policy Fragments",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <L7p:OAuth2Introspection/>\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:HttpBasic/>\n                <L7p:Authentication>\n                    <L7p:IdentityProviderOid goidValue=\"0000000000000000fffffffffffffffe\"/>\n                </L7p:Authentication>\n            </wsp:All>\n            <L7p:assertionComment>\n                <L7p:Properties mapValue=\"included\">\n                    <L7p:entry>\n                        <L7p:key stringValue=\"RIGHT.COMMENT\"/>\n                        <L7p:value stringValue=\"Authentication\"/>\n                    </L7p:entry>\n                </L7p:Properties>\n            </L7p:assertionComment>\n        </wsp:OneOrMore>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "1bb51e7089ae3706e749efbbf79fd19e",
+      "guid": "4f735cb7-7472-49a2-b9a4-519bcce26c7a",
+      "name": "Standard Security",
+      "policyType": "FRAGMENT",
+      "checksum": "56a00469504af4afdba5df9a390dde900f917e3a",
+      "folderPath": "/VLP/Policy Fragments",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:SslAssertion/>\n        <L7p:RateLimit>\n            <L7p:CounterName stringValue=\"PRESET(0482056722cfd44e)\"/>\n        </L7p:RateLimit>\n        <L7p:ThroughputQuota>\n            <L7p:CounterName stringValue=\"PRESET(aa5b2a9090b50e22)${request.tcp.remoteAddress}\"/>\n            <L7p:Global booleanValue=\"true\"/>\n            <L7p:ReadSynchronous booleanValue=\"false\"/>\n            <L7p:Synchronous booleanValue=\"false\"/>\n        </L7p:ThroughputQuota>\n        <L7p:SqlAttackProtection>\n            <L7p:IncludeUrlPath booleanValue=\"true\"/>\n            <L7p:IncludeUrlQueryString booleanValue=\"true\"/>\n            <L7p:Protections stringSetValue=\"included\">\n                <L7p:item stringValue=\"SqlMetaText\"/>\n                <L7p:item stringValue=\"OraSql\"/>\n                <L7p:item stringValue=\"MsSql\"/>\n                <L7p:item stringValue=\"SqlMeta\"/>\n            </L7p:Protections>\n        </L7p:SqlAttackProtection>\n        <L7p:CodeInjectionProtectionAssertion>\n            <L7p:IncludeBody booleanValue=\"true\"/>\n            <L7p:IncludeUrlPath booleanValue=\"true\"/>\n            <L7p:IncludeUrlQueryString booleanValue=\"true\"/>\n            <L7p:Protections codeInjectionProtectionTypeArray=\"included\">\n                <L7p:item protectionType=\"htmlJavaScriptInjection\"/>\n                <L7p:item protectionType=\"hexEncodedInjection\"/>\n                <L7p:item protectionType=\"phpEvalInjection\"/>\n                <L7p:item protectionType=\"shellInjection\"/>\n                <L7p:item protectionType=\"ldapDnInjection\"/>\n                <L7p:item protectionType=\"ldapSearchInjection\"/>\n                <L7p:item protectionType=\"xpathInjection\"/>\n            </L7p:Protections>\n            <L7p:Target target=\"REQUEST\"/>\n        </L7p:CodeInjectionProtectionAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ],
+  "properties": {
+    "defaultAction": "NEW_OR_UPDATE",
+    "meta": {
+      "id": "6d6ac1a9-6756-45bf-960c-66864b71b78f",
+      "name": "Gateway Graphman Bundle - 2026-03-25T15:51:42.365Z",
+      "hostname": "ssg-pm.brcmlabs.com",
+      "timestamp": "2026-03-25T15:51:42.365Z",
+      "schema": "11.2.1"
+    }
+  }
+}
