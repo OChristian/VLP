@@ -28,4 +28,11 @@ Vérifications
             3/ make ssg -> installs the gateway 
 8/ Open the browser, go to the OAuth Test client and get an access token
     If none is returned, open the Policy Manager and check that the cert for brcmlabs.com is loaded
-    (if not, load it)
+    (if not, load it) -> best is to restart the OTK pod:
+        * kubectl get pods -n otk
+        * kubectl delete pod -n otk <ssg...>
+9/ For both gateways, there is a Policy Manager as well as the recently released PM2 (See Firefox Bookmark bar)
+    * To start the Java Policy Manager: $pm
+    * Select ssg.mgt.com:443 (admin/7layer) -> main gateway
+    * Select otk-pm.brcmlabs.com:443 (admin/7layer) - OTK gateway
+    
