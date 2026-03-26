@@ -1,0 +1,31 @@
+{
+  "clusterProperties": [
+    {
+      "goid": "747b57c56c3677982ffe162e6edf556b",
+      "name": "oauth2.introspection.defaultTokenIssuer",
+      "checksum": "a76e066c2a81e689925c33e64a13c46a39d263bc",
+      "description": "Default OAuth Token Issuer. Choose one among the known OAuth Token Issuers as the default.",
+      "hiddenProperty": false,
+      "value": "Layer7 OAuth Toolkit"
+    },
+    {
+      "goid": "747b57c56c3677982ffe162e6edf556c",
+      "name": "oauth2.introspection.knownTokenIssuers",
+      "checksum": "fcfa9ae3514bcd63d5acd0e5f79ae8b8365c1c4f",
+      "description": "Known OAuth Token Issuers details as JSON Array.",
+      "hiddenProperty": false,
+      "value": "[\n    {\n        \"enabled\": true,\n        \"issuer\": \"Layer7 OAuth Toolkit\",\n        \"introspection_endpoint\": \"https://ssg.otk.svc.cluster.local:8443/auth/oauth/v2/introspect\",\n        \"jwks_uri\": \"https://ssg.otk.svc.cluster.local:8443/openid/connect/jwks.json\",\n        \"token_type\": \"OPAQUE\",\n        \"properties\": {\n            \"client_id\": \"54f0c455-4d80-421f-82ca-9194df24859d\",\n            \"client_secret\": \"a0f2742f-31c7-436f-9802-b7015b8fd8e6\",\n            \"leeway\": 60,\n            \"token_cache_size\": 1000,\n            \"token_cache_item_lifetime\": 300\n        }\n    }\n]"
+    }
+  ],
+  "properties": {
+    "defaultAction": "NEW_OR_UPDATE",
+    "meta": {
+      "id": "8c77e97e-af87-4d31-8354-92366d6f68d2",
+      "name": "Gateway Graphman Bundle - 2026-03-26T16:18:29.682Z",
+      "hostname": "ssg-pm.brcmlabs.com",
+      "timestamp": "2026-03-26T16:18:29.682Z",
+      "schema": "11.2.1"
+    },
+    "mappings": {}
+  }
+}
