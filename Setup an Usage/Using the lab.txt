@@ -33,6 +33,6 @@ Vérifications
         * kubectl delete pod -n otk <ssg...>
 9/ For both gateways, there is a Policy Manager as well as the recently released PM2 (See Firefox Bookmark bar)
     * To start the Java Policy Manager: $pm
-    * Select ssg.mgt.com:443 (admin/7layer) -> main gateway
+    * Select ssg-pm.brcmlabs.com:443 (admin/7layer) -> main gateway
     * Select otk-pm.brcmlabs.com:443 (admin/7layer) - OTK gateway
     
