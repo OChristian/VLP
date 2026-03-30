@@ -1,0 +1,26 @@
+{
+  "services": [
+    {
+      "goid": "e7a8b1b94c82082aa8f1cb6659f83221",
+      "guid": "0723d4b8-be6e-439e-98a5-15cf2e1426a7",
+      "name": "Test Token",
+      "resolutionPath": "/test/token",
+      "serviceType": "WEB_API",
+      "checksum": "3b730f031585f7a587ea0b838f3eda1dfa1e2d29",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:Encapsulated>\n                    <L7p:EncapsulatedAssertionConfigGuid stringValue=\"393bcb93-82ad-4b55-8333-1119f607a560\"/>\n                    <L7p:EncapsulatedAssertionConfigName stringValue=\"OTK Require OAuth 2.0 Token\"/>\n                    <L7p:Parameters mapValue=\"included\">\n                        <L7p:entry>\n                            <L7p:key stringValue=\"any_resource_required\"/>\n                            <L7p:value stringValue=\"false\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"cache_lifetime\"/>\n                            <L7p:value stringValue=\"3000\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"custom\"/>\n                            <L7p:value stringValue=\"\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"disable_audience_check\"/>\n                            <L7p:value stringValue=\"false\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"disallow_query\"/>\n                            <L7p:value stringValue=\"false\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"given_access_token\"/>\n                            <L7p:value stringValue=\"\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"onetime\"/>\n                            <L7p:value stringValue=\"false\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"resource_required\"/>\n                            <L7p:value stringValue=\"\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"scope_fail\"/>\n                            <L7p:value stringValue=\"false\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"scope_required\"/>\n                            <L7p:value stringValue=\"oob\"/>\n                        </L7p:entry>\n                    </L7p:Parameters>\n                </L7p:Encapsulated>\n                <L7p:HardcodedResponse>\n                    <L7p:Base64ResponseBody stringValue=\"VmFsaWQgYmVhcmVyIHRva2VuLg==\"/>\n                    <L7p:ResponseContentType stringValue=\"text/plain; charset=UTF-8\"/>\n                </L7p:HardcodedResponse>\n            </wsp:All>\n            <L7p:HardcodedResponse>\n                <L7p:Base64ResponseBody stringValue=\"SW52YWxpZCBiZWFyZXIgdG9rZW4u\"/>\n                <L7p:ResponseContentType stringValue=\"text/plain; charset=UTF-8\"/>\n            </L7p:HardcodedResponse>\n        </wsp:OneOrMore>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ]
+}

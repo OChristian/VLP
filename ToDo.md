@@ -21,3 +21,7 @@ Demo
 * Removal of a JSON field: JSON-XML / XPATH /  XML->JSON
 * Validation (xml, json, graphQL)
 
+* Remove the git on the VM platform
+* Re-create the test Token policy (without OTK dependencies)
+* Put the data in the VLP directory
+* Explain the directories in the doc
