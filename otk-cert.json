@@ -1,0 +1,34 @@
+{
+  "trustedCerts": [
+    {
+      "goid": "644c1f246ce973266cb54ead1dd27bb3",
+      "name": "*.brcmlabs.com",
+      "subjectDn": "cn=*.brcmlabs.com,ou=ims,o=broadcom,l=paris,st=ile de france,c=fr",
+      "thumbprint": "SHA1:cd918473713d2fd3df13d28637aca9d007abc7c7",
+      "thumbprintSha1": "zZGEc3E9L9PfE9KGN6yp0Aerx8c=",
+      "checksum": "960630e3184c5a173aa9d4cbc538511aa79c07fb",
+      "verifyHostname": false,
+      "trustAnchor": true,
+      "trustedFor": [
+        "SSL",
+        "SIGNING_SERVER_CERTS",
+        "SIGNING_CLIENT_CERTS"
+      ],
+      "revocationCheckPolicyType": "USE_DEFAULT",
+      "notBefore": "2026-02-09T10:51:55.000Z",
+      "notAfter": "2036-02-07T10:51:55.000Z",
+      "certBase64": "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"
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "52a8388d-a3be-4a84-9042-db0ef6d1727c",
+      "name": "Gateway Graphman Bundle - 2026-03-30T08:18:27.392Z",
+      "author": "admin",
+      "hostname": "otk-pm.brcmlabs.com",
+      "timestamp": "2026-03-30T08:18:27.392Z",
+      "schema": "11.2.1"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}
