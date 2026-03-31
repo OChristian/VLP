@@ -34,7 +34,7 @@
       "checksum": "fcfa9ae3514bcd63d5acd0e5f79ae8b8365c1c4f",
       "description": "Known OAuth Token Issuers details as JSON Array.",
       "hiddenProperty": false,
-      "value": "[\n    {\n        \"enabled\": true,\n        \"issuer\": \"Layer7 OAuth Toolkit\",\n        \"introspection_endpoint\": \"https://ssg.otk.svc.cluster.local:8443/auth/oauth/v2/introspect\",\n        \"jwks_uri\": \"https://ssg.otk.svc.cluster.local:8443/openid/connect/jwks.json\",\n        \"token_type\": \"OPAQUE\",\n        \"properties\": {\n            \"client_id\": \"54f0c455-4d80-421f-82ca-9194df24859d\",\n            \"client_secret\": \"a0f2742f-31c7-436f-9802-b7015b8fd8e6\",\n            \"leeway\": 60,\n            \"token_cache_size\": 1000,\n            \"token_cache_item_lifetime\": 300\n        }\n    }\n]"
+      "value": "[\n    {\n        \"enabled\": true,\n        \"issuer\": \"Layer7 OAuth Toolkit\",\n        \"introspection_endpoint\": \"https://otk.brcmlabs.com/auth/oauth/v2/introspect\",\n        \"jwks_uri\": \"https://otk.brcmlabs.com/openid/connect/jwks.json\",\n        \"token_type\": \"OPAQUE\",\n        \"properties\": {\n            \"client_id\": \"d3ebf270-c82a-4d08-9b76-df60d261eac3\",\n            \"client_secret\": \"6202063b-2044-4f4d-b7a1-57a0a210d9e3\",\n            \"leeway\": 60,\n            \"token_cache_size\": 1000,\n            \"token_cache_item_lifetime\": 300\n        }\n    }\n]"
     },
     {
       "name": "ollama_target",
