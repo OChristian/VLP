@@ -3197,31 +3197,6 @@
       }
     }
   ],
-  "serverModuleFiles": [
-    {
-      "goid": "ef2a32df58ede45d242c9fc93406b7bf",
-      "name": "OTK Scope Assertions",
-      "checksum": "dba53f59f19a8d81e9fd1592f98e5b5840a15ecd",
-      "moduleType": "CUSTOM_ASSERTION",
-      "moduleSha256": "4d05db0f6eddb83184bcd03149b1331da2144af124eff041bf471a13d7e5dea6",
-      "signature": "MEUCIQDOo/bX2rog1iwKYoHRPp6dOeb290TPAgIVUeSfw0OMgwIgMgQE0es9YajW/srIHUzio+g9DXN7LSwcTOMDFJ0klSM=",
-      "signerCertBase64": "MIIBcjCCARmgAwIBAgIIfrAVUYy9bZIwCQYHKoZIzj0EATAbMRkwFwYDVQQDExByb290LmFwaW0uY2EuY29tMB4XDTE1MDgwNjIzMzkxNVoXDTM1MDgwNjIzMzkxNVowITEfMB0GA1UEAxMWc2lnbmVyLm1hZy5hcGltLmNhLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABI4blGdndnwh/A95P+Wi37a7yc/o98Lt0Jozmsmw/XwEKOlLPq9pwgahZbPD8VHvmuXepS/tdpIf3miOlSTJI8mjQjBAMB0GA1UdDgQWBBQqmQysH+nd5fyCdVbOyc+SFrtYBjAfBgNVHSMEGDAWgBTr9k+HhvWquHQ4/HRqhelY9+NC8DAJBgcqhkjOPQQBA0gAMEUCIHR/PseA+QwUD/kI714LXXwb0z+47tmG01K8SdqoeVkbAiEAhHxaQ3X/P8nAgMsorPd0FcTd61mrTzTfdEWSIg9cQvo=",
-      "properties": [
-        {
-          "name": "moduleAssertions",
-          "value": "DecodeJWTAssertion,ResourceIssueAssertion,ResourceVerificationAssertion,ScopeIssueAssertion"
-        },
-        {
-          "name": "moduleFileName",
-          "value": "OTKScopeAssertion-1.3.1.jar"
-        },
-        {
-          "name": "moduleSize",
-          "value": "76294"
-        }
-      ]
-    }
-  ],
   "properties": {
     "defaultAction": "NEW_OR_EXISTING",
     "meta": {
