@@ -11,6 +11,7 @@ Demo
     CBAT
     Audience Restriction
     Token exchange
+    DPOP
 
 * Distributed rate limit
 * HTTP2
