@@ -1,0 +1,14 @@
+* updated the operator (1.3)
+* use the new gateway CRDs
+* update gateway in default namespace
+* update gateway in otk namespace
+* updated the Grafana dashboard (to filter on http.route)
+* update Graphman (2.0.22)
+* use contour Ingress
+
+Certificate brcmlabs (in secret)
+* the key and certificate is created with "make pki" and is stored in /tmp/tls.key and /tmp/tls.cert
+* contour needs the secret in each namespace (default, otk, monitoring):
+    kubectl create secret tls brcmlabs --cert=/tmp/tls.crt --key=/tmp/tls.key -n "namespace"
+    == don't use kustomize for certificate creation ==
+* the secret is then referenced in the gateway yaml file (e.g. for gateway policies to be able to call otk)
