@@ -42,7 +42,7 @@ spec:
         - hostnames:
           - "otk.brcmlabs.com"
           - "otk-pm.brcmlabs.com"
-          ip: "10.1.143.192"
+          ip: "172.18.0.1"
     otk:
       enabled: true
       initContainerImage: docker.io/caapim/otk-install:4.7.0

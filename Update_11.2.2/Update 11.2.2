@@ -10,5 +10,8 @@ Certificate brcmlabs (in secret)
 * the key and certificate is created with "make pki" and is stored in /tmp/tls.key and /tmp/tls.cert
 * contour needs the secret in each namespace (default, otk, monitoring):
     kubectl create secret tls brcmlabs --cert=/tmp/tls.crt --key=/tmp/tls.key -n "namespace"
+    (certificates may also be in ./example/base/resources/secrets/tls')
     == don't use kustomize for certificate creation ==
 * the secret is then referenced in the gateway yaml file (e.g. for gateway policies to be able to call otk)
+
+* adding: spec.app.ingress.annotations: projectcontour.io/websocket-routes: "/" so that debugger works with Contour Ingress.
